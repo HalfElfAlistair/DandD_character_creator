@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- <link href="assets/stylesheets/style.css" rel="stylesheet"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			.responsive {
+			  max-width: 100%;
+			  height: auto;
+			}
+        </style>
+            <script src="jquery.js"></script>
+            <script src="jquery_processes.js"></script>
+    </head>
+    <body>
+        <section id="race">
+            <h2>Race</h2>
+            <div>
+                <p>First, select your race.</p>
+                <select id="race-list" placeholder>
+                    <option disabled selected value>Choose a race from the dropdown list!</option>
+                    <option>Dragonborn</option>
+                    <option>Dwarf</option>
+                    <option>Elf</option>
+                    <option>Gnome</option>
+                    <option>Half-Elf</option>
+                    <option>Halfling</option>
+                    <option>Half-Orc</option>
+                    <option>Human</option>
+                    <option>Tiefling</option>
+                </select>
+            </div>
+        </section>
+        <section id="confirmation">
+            <div>
+                <input value="Submit" type="button" id="submit-button" class="sub-button">
+            </div>
+        </section>
+        <section id="character-card">
+            <div class="card">
+                <h2>Character Card</h2>
+                <p id="race-card">Race:</p>
+            </div>
+        </section>
+    </body>
