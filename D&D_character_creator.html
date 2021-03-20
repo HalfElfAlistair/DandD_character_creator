@@ -17,7 +17,7 @@
             <h2>Race</h2>
             <div>
                 <p>First, select your race.</p>
-                <select id="race-list" placeholder>
+                <select id="race-list" required>
                     <option disabled selected value>Choose a race from the dropdown list!</option>
                     <option>Dragonborn</option>
                     <option>Dwarf</option>
@@ -31,6 +31,10 @@
                 </select>
             </div>
         </section>
+        <section id="name">
+            <h2>Name</h2>
+            <input type="text" class="textbox" id="character-name" placeholder="Choose a name" required>
+        </section>
         <section id="confirmation">
             <div>
                 <input value="Submit" type="button" id="submit-button" class="sub-button">
@@ -39,6 +43,7 @@
         <section id="character-card">
             <div class="card">
                 <h2>Character Card</h2>
+                <p id="name-card">Race:</p>
                 <p id="race-card">Race:</p>
             </div>
         </section>
