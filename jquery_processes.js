@@ -8,7 +8,9 @@ $(document).ready(function() {
 
     $("#submit-button").click(function() {
         let raceSelection = $("#race-list option:selected").val();
+        let nameSelection = $("#character-name").val();
         $("#race-card").text("Race: " + raceSelection);
+        $("#name-card").text("Name: " + nameSelection);
     });
 
 });
