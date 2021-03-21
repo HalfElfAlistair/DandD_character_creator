@@ -13,7 +13,7 @@
             <script src="jquery_processes.js"></script>
     </head>
     <body>
-        <section id="race">
+        <section id="race-section">
             <h2>Race</h2>
             <div>
                 <p>First, select your race.</p>
@@ -30,21 +30,39 @@
                     <option>Tiefling</option>
                 </select>
             </div>
-        </section>
-        <section id="name">
-            <h2>Name</h2>
-            <input type="text" class="textbox" id="character-name" placeholder="Choose a name" required>
-        </section>
-        <section id="confirmation">
             <div>
                 <input value="Submit" type="button" id="submit-button" class="sub-button">
+            </div>
+            <div>
+                <input value="Next" type="button" id="next-1" class="nav-button">
+            </div>
+        </section>
+        <section id="name-section">
+            <div>
+                <h2>Name</h2>
+                <input type="text" class="textbox" id="character-name" placeholder="Choose a name" required>
+            </div>
+            <div>
+                <input value="Submit" type="button" id="submit-button" class="sub-button">
+            </div>
+            <div>
+                <input value="Previous" type="button" id="previous-2" class="nav-button">
+            </div>
+        </section>
+        <section id="card-display-toggle">
+            <div>
+                <input value="Show" type="button" id="show" class="show-button">
+            </div>
+            <div>
+                <input value="Hide" type="button" id="hide" class="hide-button">
             </div>
         </section>
         <section id="character-card">
             <div class="card">
                 <h2>Character Card</h2>
-                <p id="name-card">Race:</p>
+                <p id="name-card">Name:</p>
                 <p id="race-card">Race:</p>
             </div>
+            <section id="confirmation">
         </section>
     </body>
