@@ -3,10 +3,13 @@ $(document).ready(function() {
     $("#character-card").hide();
     $("#name-section").hide();
 
-    $(".sub-button").click(function() {
+    $("#race-list").change(function() {
         let raceSelection = $("#race-list option:selected").val();
-        let nameSelection = $("#character-name").val();
         $("#race-card").text("Race: " + raceSelection);
+    });
+
+    $("#character-name").change(function() {
+        let nameSelection = $("#character-name").val();
         $("#name-card").text("Name: " + nameSelection);
     });
 
