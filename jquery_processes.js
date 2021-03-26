@@ -37,6 +37,12 @@ $(document).ready(function() {
         } else {
             $("#subrace").hide();
         }
+
+        if ((raceSelection == "Dragonborn") || (raceSelection == "Dwarf") || (raceSelection == "Elf") || (raceSelection == "Half-Elf") || (raceSelection == "Half-Orc") || (raceSelection == "Human") || (raceSelection == "Tiefling")) {
+            $("#size-card").text("Size: Medium")
+        } else if ((raceSelection == "Gnome") || (raceSelection == "Halfling")) {
+            $("#size-card").text("Size: Small")
+        };
     });
 
     $("#character-name").change(function() {
