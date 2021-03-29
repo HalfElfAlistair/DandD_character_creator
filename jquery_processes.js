@@ -1,41 +1,41 @@
 $(document).ready(function() {
 
-    $("#character-card, #name-section, #subrace, #subrace-dwarf, #subrace-elf, #subrace-gnome, #subrace-halfling").hide();
+    $("#character-card, #name-section, #subrace-section, .subraces").hide();
 
     $("#race-list").change(function() {
         let raceSelection = $("#race-list option:selected").val();
         $("#race-card").text("Race: " + raceSelection);
 
         if (raceSelection == "Dwarf") {
-            $("#subrace, #subrace-dwarf").show();
-            $("#subrace-elf, #subrace-gnome, #subrace-halfling").hide();
+            $(".subraces").hide();
+            $("#subrace-section, #subrace-dwarf").show();
             $("#dwarf-subrace-list").change(function() {
                 let subraceSelection = $("#dwarf-subrace-list option:selected").val();
                 $("#race-card").text("Race: " + raceSelection + " (Subrace: " + subraceSelection + ")");
             });
         } else if (raceSelection == "Elf") {
-            $("#subrace, #subrace-elf").show();
-            $("#subrace-dwarf, #subrace-gnome, #subrace-halfling").hide();
+            $(".subraces").hide();
+            $("#subrace-section, #subrace-elf").show();
             $("#elf-subrace-list").change(function() {
                 let subraceSelection = $("#elf-subrace-list option:selected").val();
                 $("#race-card").text("Race: " + raceSelection + " (Subrace: " + subraceSelection + ")");
             });
         } else if (raceSelection == "Gnome") {
-            $("#subrace, #subrace-gnome").show();
-            $("#subrace-dwarf, #subrace-elf, #subrace-halfling").hide();
+            $(".subraces").hide();
+            $("#subrace-section, #subrace-gnome").show();
             $("#gnome-subrace-list").change(function() {
                 let subraceSelection = $("#gnome-subrace-list option:selected").val();
                 $("#race-card").text("Race: " + raceSelection + " (Subrace: " + subraceSelection + ")");
             });
         } else if (raceSelection == "Halfling") {
-            $("#subrace, #subrace-halfling").show();
-            $("#subrace-dwarf, #subrace-elf, #subrace-gnome").hide();
+            $(".subraces").hide();
+            $("#subrace-section, #subrace-halfling").show();
             $("#halfling-subrace-list").change(function() {
                 let subraceSelection = $("#halfling-subrace-list option:selected").val();
                 $("#race-card").text("Race: " + raceSelection + " (Subrace: " + subraceSelection + ")");
             });
         } else {
-            $("#subrace").hide();
+            $(".subraces, #subrace-section").hide();
         }
 
         if ((raceSelection == "Dragonborn") || (raceSelection == "Dwarf") || (raceSelection == "Elf") || (raceSelection == "Half-Elf") || (raceSelection == "Half-Orc") || (raceSelection == "Human") || (raceSelection == "Tiefling")) {
