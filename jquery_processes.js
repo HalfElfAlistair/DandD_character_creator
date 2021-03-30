@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $("#character-card, #name-section, #subrace-section, .subraces").hide();
+    $("#character-card, #name-section, #subrace-section, #age-section, .subraces").hide();
 
     $("#race-list").change(function() {
         let raceSelection = $("#race-list option:selected").val();
@@ -43,11 +43,36 @@ $(document).ready(function() {
         } else if ((raceSelection == "Gnome") || (raceSelection == "Halfling")) {
             $("#size-card").text("Size: Small")
         };
+
+        if (raceSelection == "Dragonborn") {
+            $("#character-age").attr("max", "80");
+        } else if (raceSelection == "Dwarf") {
+            $("#character-age").attr("max", "350");
+        } else if (raceSelection == "Elf") {
+            $("#character-age").attr("max", "750");
+        } else if (raceSelection == "Gnome") {
+            $("#character-age").attr("max", "499");
+        } else if (raceSelection == "Half-Elf") {
+            $("#character-age").attr("max", "200");
+        } else if (raceSelection == "Halfling") {
+            $("#character-age").attr("max", "150");
+        } else if (raceSelection == "Half-Orc") {
+            $("#character-age").attr("max", "75");
+        } else if (raceSelection == "Human") {
+            $("#character-age").attr("max", "99");
+        } else if (raceSelection == "Tiefling") {
+            $("#character-age").attr("max", "110");
+        }
     });
 
     $("#character-name").change(function() {
         let nameSelection = $("#character-name").val();
         $("#name-card").text("Name: " + nameSelection);
+    });
+
+    $("#character-age").change(function() {
+        let ageSelection = $("#character-age").val();
+        $("#age-card").text("Age: " + ageSelection);
     });
 
     $("#next-1").click(function() {
@@ -58,6 +83,16 @@ $(document).ready(function() {
     $("#previous-2").click(function() {
         $("#name-section").hide();
         $("#race-section").show();
+    });
+
+    $("#next-2").click(function() {
+        $("#name-section").hide();
+        $("#age-section").show();
+    });
+
+    $("#previous-3").click(function() {
+        $("#age-section").hide();
+        $("#name-section").show();
     });
 
     $("#show").click(function() {
