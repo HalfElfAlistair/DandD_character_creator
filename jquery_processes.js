@@ -12,6 +12,30 @@ $(document).ready(function() {
             // Prints race input value to character card
         $("#race-card").text("Race: " + raceSelection);
 
+
+        let workingObject = Object.entries(races);
+
+        for (let i = 0; i < workingObject.length; i++) {
+            let selectObject = workingObject[i][0]
+            let objectData = Object.entries(workingObject[i][1]);
+
+
+            // Matches a corresponding object with the chosen race, from which data can be drawn
+            if (selectObject === raceSelection) {
+
+                // Assigns a maximum value to the age selector input, based on chosen race
+                $("#character-age").attr("max", objectData[0][1]);
+
+              }
+        }
+
+
+
+
+
+
+
+
             // subrace selector show/hide toggles
         if (raceSelection == "Dwarf") {
             $(".subraces").hide();
@@ -53,25 +77,6 @@ $(document).ready(function() {
         };
 
             // Assigns a maximum value to the age selector input, based on chosen race
-        if (raceSelection == "Dragonborn") {
-            $("#character-age").attr("max", "80");
-        } else if (raceSelection == "Dwarf") {
-            $("#character-age").attr("max", "350");
-        } else if (raceSelection == "Elf") {
-            $("#character-age").attr("max", "750");
-        } else if (raceSelection == "Gnome") {
-            $("#character-age").attr("max", "499");
-        } else if (raceSelection == "Half-Elf") {
-            $("#character-age").attr("max", "200");
-        } else if (raceSelection == "Halfling") {
-            $("#character-age").attr("max", "150");
-        } else if (raceSelection == "Half-Orc") {
-            $("#character-age").attr("max", "75");
-        } else if (raceSelection == "Human") {
-            $("#character-age").attr("max", "99");
-        } else if (raceSelection == "Tiefling") {
-            $("#character-age").attr("max", "110");
-        }
     });
 
         // Prints the choice of character name when changed from the respective input
