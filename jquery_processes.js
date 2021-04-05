@@ -12,12 +12,12 @@ $(document).ready(function() {
             // Prints race input value to character card
         $("#race-card").text("Race: " + raceSelection);
 
+        // Assigns the races object from race_data to a variable
+        let racesObject = Object.entries(races);
 
-        let workingObject = Object.entries(races);
-
-        for (let i = 0; i < workingObject.length; i++) {
-            let selectObject = workingObject[i][0]
-            let objectData = Object.entries(workingObject[i][1]);
+        for (let i = 0; i < racesObject.length; i++) {
+            let selectObject = racesObject[i][0]
+            let objectData = Object.entries(racesObject[i][1]);
 
 
             // Matches a corresponding object with the chosen race, from which data can be drawn
