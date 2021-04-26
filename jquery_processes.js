@@ -1,97 +1,120 @@
 $(document).ready(function() {
 
-        // Hides certain sections on opening
-    $("#character-card, #name-section, #subrace-section, #age-section, .subraces").hide();
+    // Hides certain sections on opening
+    $("#character-card, #subrace-section, #name-section, #age-section, #physique-section").hide();
 
-        // Creates a function that proceeds when a new option is chosen from the race selector
+    // Creates a function that proceeds when a new option is chosen from the race selector
     $("#race-list").change(function() {
 
-            // Establishes raceSelection input value
+        // Establishes raceSelection input value
         let raceSelection = $("#race-list option:selected").val();
 
-            // Prints race input value to character card
+        // Prints race input value to character card
         $("#race-card").text("Race: " + raceSelection);
 
         // Assigns the races object from race_data to a variable
         let racesObject = Object.entries(races);
 
+        // Loops through racesObject and assigns variables for child objects and their data
         for (let i = 0; i < racesObject.length; i++) {
-            let selectObject = racesObject[i][0]
-            let objectData = Object.entries(racesObject[i][1]);
+            let raceTitle = racesObject[i][0]
+            let raceData = Object.entries(racesObject[i][1]);
+
+            // Matches the chosen race with the corresponding object, from which data can be drawn
+            if (raceTitle === raceSelection) {
 
 
-            // Matches a corresponding object with the chosen race, from which data can be drawn
-            if (selectObject === raceSelection) {
+                // Assigns a variable for the child object containing subraces
+                let subraceObject = Object.entries(raceData[1][1]);
+
+                // Toggles between show and hide for the subrace option depending on whether or not a race has any
+                if (subraceObject == "") {
+                    $("#subrace-section").hide();
+
+                    // Assigns a function for the physique roller using respective data for non-subrace races. Once pressed, the physique roller button will enable a height and weight value, produced by the function, to be printed in HTML
+                    $("#physique-roller").click(function() {
+                        let physiqueArray = (physiqueCalculator(raceData[3][1], raceData[2][1], raceData[4][1], raceData[5][1], raceData[6][1]));
+                        $("#height-card").text(physiqueArray[0]);
+                        $("#weight-card").text(physiqueArray[1]);
+                    })
+                } else {
+                    $("#subrace-section").show();
+                }
+
+                // Defaults to remove any subrace selector options so there are no duplicates or subraces with an incorrect race assignment
+                $(".subrace-option").remove();
+
+                // Loops through the relevant subrace titles and prints each one as a selector option in HTML
+                for (let s = 0; s < subraceObject.length; s++) {
+                    $(".subrace-selector").append(`<option class="subrace-option">${subraceObject[s][0]}</option>`);
+                }
+
+                // Once a subrace is selected from the dropdown, the function will assign the chosen subrace as a variable and perform some relevant tasks
+                $(".subrace-selector").change(function() {
+                    let subraceSelection = $(".subrace-selector option:selected").val();
+
+                    // Appends the selected subrace to the printed HTML for race
+                    $("#race-card").text("Race: " + raceSelection + " (Subrace: " + subraceSelection + ")");
+
+                    // Loops through subraceObject and assigns variables for child objects and their data
+                    for (let s = 0; s < subraceObject.length; s++) {
+                        let subraceTitle = subraceObject[s][0];
+                        let subraceData = Object.entries(subraceObject[s][1]);
+
+                        // Uses the relevant subrace data to operate a function for the physique roller button, which enables a height and weight value to be printed in HTML
+                        if (subraceTitle === subraceSelection) {
+                            $("#physique-roller").click(function() {
+                                let physiqueArray = (physiqueCalculator(subraceData[1][1], subraceData[0][1], subraceData[2][1], subraceData[3][1], subraceData[4][1]));
+                                $("#height-card").text(physiqueArray[0]);
+                                $("#weight-card").text(physiqueArray[1]);
+                            })
+                        }
+
+                    }
+
+                })
+
 
                 // Assigns a maximum value to the age selector input, based on chosen race
-                $("#character-age").attr("max", objectData[0][1]);
+                $("#character-age").attr("max", raceData[0][1]);
 
-              }
+                
+
+            }
         }
 
 
-
-
-
-
-
-
-            // subrace selector show/hide toggles
-        if (raceSelection == "Dwarf") {
-            $(".subraces").hide();
-            $("#subrace-section, #subrace-dwarf").show();
-            $("#dwarf-subrace-list").change(function() {
-                let subraceSelection = $("#dwarf-subrace-list option:selected").val();
-                $("#race-card").text("Race: " + raceSelection + " (Subrace: " + subraceSelection + ")");
-            });
-        } else if (raceSelection == "Elf") {
-            $(".subraces").hide();
-            $("#subrace-section, #subrace-elf").show();
-            $("#elf-subrace-list").change(function() {
-                let subraceSelection = $("#elf-subrace-list option:selected").val();
-                $("#race-card").text("Race: " + raceSelection + " (Subrace: " + subraceSelection + ")");
-            });
-        } else if (raceSelection == "Gnome") {
-            $(".subraces").hide();
-            $("#subrace-section, #subrace-gnome").show();
-            $("#gnome-subrace-list").change(function() {
-                let subraceSelection = $("#gnome-subrace-list option:selected").val();
-                $("#race-card").text("Race: " + raceSelection + " (Subrace: " + subraceSelection + ")");
-            });
-        } else if (raceSelection == "Halfling") {
-            $(".subraces").hide();
-            $("#subrace-section, #subrace-halfling").show();
-            $("#halfling-subrace-list").change(function() {
-                let subraceSelection = $("#halfling-subrace-list option:selected").val();
-                $("#race-card").text("Race: " + raceSelection + " (Subrace: " + subraceSelection + ")");
-            });
-        } else {
-            $(".subraces, #subrace-section").hide();
-        }
-
-            // Prints a relevant size value depending on the selected race
+        // Size decider
         if ((raceSelection == "Dragonborn") || (raceSelection == "Dwarf") || (raceSelection == "Elf") || (raceSelection == "Half-Elf") || (raceSelection == "Half-Orc") || (raceSelection == "Human") || (raceSelection == "Tiefling")) {
             $("#size-card").text("Size: Medium")
         } else if ((raceSelection == "Gnome") || (raceSelection == "Halfling")) {
             $("#size-card").text("Size: Small")
         };
-
-            // Assigns a maximum value to the age selector input, based on chosen race
+        
     });
 
-        // Prints the choice of character name when changed from the respective input
+    // name function
     $("#character-name").change(function() {
         let nameSelection = $("#character-name").val();
         $("#name-card").text("Name: " + nameSelection);
     });
 
-        // Prints the choice of character age when changed from the respective input
+    // age function
     $("#character-age").change(function() {
         let ageSelection = $("#character-age").val();
         $("#age-card").text("Age: " + ageSelection);
     });
 
-        // Nav and show/hide card button functions
+
+
+
+
+
+
+    
+
+
+    // Nav and show/hide card button functions
     $("#next-1").click(function() {
         $("#race-section").hide();
         $("#name-section").show();
@@ -110,6 +133,16 @@ $(document).ready(function() {
     $("#previous-3").click(function() {
         $("#age-section").hide();
         $("#name-section").show();
+    });
+
+    $("#next-3").click(function() {
+        $("#age-section").hide();
+        $("#physique-section").show();
+    });
+
+    $("#previous-4").click(function() {
+        $("#physique-section").hide();
+        $("#age-section").show();
     });
 
     $("#show").click(function() {
