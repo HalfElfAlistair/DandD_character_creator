@@ -123,12 +123,14 @@ $(document).ready(function() {
         $("#physical-creation section:visible").prev().show().next().hide();
     });
 
-    $("#show").click(function() {
-        $("#character-card").show();
-    });
-
-    $("#hide").click(function() {
-        $("#character-card").hide();
-    });
+    $("#show-hide-toggle").click(function() {
+        if ($("#show-hide-toggle").text() == "Show Card") {
+            $("#character-card").show();
+            $("#show-hide-toggle").text("Hide Card");
+        } else {
+            $("#character-card").hide();
+            $("#show-hide-toggle").text("Show Card");
+        }
+    })
 
 });
