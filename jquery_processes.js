@@ -115,34 +115,12 @@ $(document).ready(function() {
 
 
     // Nav and show/hide card button functions
-    $("#next-1").click(function() {
-        $("#race-section").hide();
-        $("#name-section").show();
+    $("#next").click(function() {
+        $("#physical-creation section:visible").next().show().prev().hide();
     });
 
-    $("#previous-2").click(function() {
-        $("#name-section").hide();
-        $("#race-section").show();
-    });
-
-    $("#next-2").click(function() {
-        $("#name-section").hide();
-        $("#age-section").show();
-    });
-
-    $("#previous-3").click(function() {
-        $("#age-section").hide();
-        $("#name-section").show();
-    });
-
-    $("#next-3").click(function() {
-        $("#age-section").hide();
-        $("#physique-section").show();
-    });
-
-    $("#previous-4").click(function() {
-        $("#physique-section").hide();
-        $("#age-section").show();
+    $("#previous").click(function() {
+        $("#physical-creation section:visible").prev().show().next().hide();
     });
 
     $("#show").click(function() {
