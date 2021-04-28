@@ -23,6 +23,8 @@ $(document).ready(function() {
             // Matches the chosen race with the corresponding object, from which data can be drawn
             if (raceTitle === raceSelection) {
 
+                // Defaults to remove and size information if race is changed
+                $("#size-card").text("Size:");
 
                 // Assigns a variable for the child object containing subraces
                 let subraceObject = Object.entries(raceData[1][1]);
@@ -37,6 +39,8 @@ $(document).ready(function() {
                         $("#height-card").text(physiqueArray[0]);
                         $("#weight-card").text(physiqueArray[1]);
                     })
+                    // Prints respective size information for race
+                    $("#size-card").text("Size: " + raceData[7][1]);
                 } else {
                     $("#subrace-section").show();
                 }
@@ -68,6 +72,8 @@ $(document).ready(function() {
                                 $("#height-card").text(physiqueArray[0]);
                                 $("#weight-card").text(physiqueArray[1]);
                             })
+                            // Prints respective size information for subrace
+                            $("#size-card").text("Size: " + subraceData[5][1]);
                         }
 
                     }
@@ -82,14 +88,6 @@ $(document).ready(function() {
 
             }
         }
-
-
-        // Size decider
-        if ((raceSelection == "Dragonborn") || (raceSelection == "Dwarf") || (raceSelection == "Elf") || (raceSelection == "Half-Elf") || (raceSelection == "Half-Orc") || (raceSelection == "Human") || (raceSelection == "Tiefling")) {
-            $("#size-card").text("Size: Medium")
-        } else if ((raceSelection == "Gnome") || (raceSelection == "Halfling")) {
-            $("#size-card").text("Size: Small")
-        };
         
     });
 
