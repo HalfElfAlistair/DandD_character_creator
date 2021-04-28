@@ -8,6 +8,7 @@ const races = {
         weightDiceType: 6,
         basePounds: 175,
         size: "Medium",
+        speed: 30,
     },
     "Dwarf": {
         maxAge: 350,
@@ -19,6 +20,7 @@ const races = {
                 weightDiceType: 6,
                 basePounds: 115,
                 size: "Medium",
+                speed: 25,
             },
             "Mountain Dwarf": {
                 baseInches: 48,
@@ -27,6 +29,7 @@ const races = {
                 weightDiceType: 6,
                 basePounds: 130,
                 size: "Medium",
+                speed: 25,
             },
         },
     },
@@ -40,6 +43,7 @@ const races = {
                 weightDiceType: 4,
                 basePounds: 90,
                 size: "Medium",
+                speed: 30,
             },
             "Wood Elf": {
                 baseInches: 54,
@@ -48,6 +52,7 @@ const races = {
                 weightDiceType: 4,
                 basePounds: 100,
                 size: "Medium",
+                speed: 35,
             },
             "Dark Elf": {
                 baseInches: 53,
@@ -56,6 +61,7 @@ const races = {
                 weightDiceType: 6,
                 basePounds: 75,
                 size: "Medium",
+                speed: 30,
             },
         },
     },
@@ -69,6 +75,7 @@ const races = {
                 weightDiceType: 1,
                 basePounds: 35,
                 size: "Small",
+                speed: 25,
             },
             "Rock Gnome": {
                 baseInches: 35,
@@ -77,6 +84,7 @@ const races = {
                 weightDiceType: 1,
                 basePounds: 35,
                 size: "Small",
+                speed: 25,
             },
         },
 
@@ -90,6 +98,7 @@ const races = {
         weightDiceType: 4,
         basePounds: 110,
         size: "Medium",
+        speed: 30,
     },
     "Halfling": {
         maxAge: 150,
@@ -101,6 +110,7 @@ const races = {
                 weightDiceType: 1,
                 basePounds: 35,
                 size: "Small",
+                speed: 25,
             },
             "Stout": {
                 baseInches: 31,
@@ -109,6 +119,7 @@ const races = {
                 weightDiceType: 1,
                 basePounds: 35,
                 size: "Small",
+                speed: 25,
             },
         },
 
@@ -122,6 +133,7 @@ const races = {
         weightDiceType: 6,
         basePounds: 140,
         size: "Medium",
+        speed: 30,
     },
     "Human": {
         maxAge: 99,
@@ -132,6 +144,7 @@ const races = {
         weightDiceType: 4,
         basePounds: 110,
         size: "Medium",
+        speed: 30,
     },
     "Tiefling": {
         maxAge: 110,
@@ -142,5 +155,6 @@ const races = {
         weightDiceType: 4,
         basePounds: 110,
         size: "Medium",
+        speed: 30,
     },
 };
