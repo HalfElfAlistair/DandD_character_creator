@@ -111,10 +111,25 @@ $(document).ready(function() {
 
 
 
-    
+    // Hides #previous button on load
+    $("#previous").hide();
+
+    // Ensures #previous button is hidden for the first section and #next button is hidden from the last section
+    $("body").click(function() {
+        if ($("#physical-creation section:first").is(":visible")) {
+            $("#previous").hide();
+            $("#next").show();
+        } else if ($("#physical-creation section:last").is(":visible")) {
+            $("#next").hide();
+            $("#previous").show();
+        } else {
+            $("#next").show();
+            $("#previous").show();
+        }
+    })
 
 
-    // Nav and show/hide card button functions
+    // Nav functions to show next or previous sections and hide others
     $("#next").click(function() {
         $("#physical-creation section:visible").next().show().prev().hide();
     });
@@ -123,6 +138,7 @@ $(document).ready(function() {
         $("#physical-creation section:visible").prev().show().next().hide();
     });
 
+    // Button to toggle between a choice of showing or hiding the character card
     $("#show-hide-toggle").click(function() {
         if ($("#show-hide-toggle").text() == "Show Card") {
             $("#character-card").show();
