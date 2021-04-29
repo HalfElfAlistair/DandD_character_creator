@@ -11,6 +11,7 @@ const races = {
         speed: 30,
         languages: ["Common", " Draconic"],
         extraLanguages: 0,
+        darkVision: 0,
     },
     "Dwarf": {
         maxAge: 350,
@@ -25,6 +26,7 @@ const races = {
                 speed: 25,
                 languages: ["Common", " Dwarvish"],
                 extraLanguages: 0,
+                darkVision: 60,
             },
             "Mountain Dwarf": {
                 baseInches: 48,
@@ -36,6 +38,7 @@ const races = {
                 speed: 25,
                 languages: ["Common", " Dwarvish"],
                 extraLanguages: 0,
+                darkVision: 60,
             },
         },
     },
@@ -52,6 +55,7 @@ const races = {
                 speed: 30,
                 languages: ["Common", " Elvish"],
                 extraLanguages: 1,
+                darkVision: 60,
             },
             "Wood Elf": {
                 baseInches: 54,
@@ -63,6 +67,7 @@ const races = {
                 speed: 35,
                 languages: ["Common", " Elvish"],
                 extraLanguages: 0,
+                darkVision: 60,
             },
             "Dark Elf": {
                 baseInches: 53,
@@ -74,6 +79,7 @@ const races = {
                 speed: 30,
                 languages: ["Common", " Elvish"],
                 extraLanguages: 0,
+                darkVision: 120,
             },
         },
     },
@@ -90,6 +96,7 @@ const races = {
                 speed: 25,
                 languages: ["Common", " Gnomish"],
                 extraLanguages: 0,
+                darkVision: 60,
             },
             "Rock Gnome": {
                 baseInches: 35,
@@ -101,6 +108,7 @@ const races = {
                 speed: 25,
                 languages: ["Common", " Gnomish"],
                 extraLanguages: 0,
+                darkVision: 60,
             },
         },
 
@@ -117,6 +125,7 @@ const races = {
         speed: 30,
         languages: ["Common", " Elvish"],
         extraLanguages: 1,
+        darkVision: 60,
     },
     "Halfling": {
         maxAge: 150,
@@ -131,6 +140,7 @@ const races = {
                 speed: 25,
                 languages: ["Common", " Halfling"],
                 extraLanguages: 0,
+                darkVision: 0,
             },
             "Stout": {
                 baseInches: 31,
@@ -142,6 +152,7 @@ const races = {
                 speed: 25,
                 languages: ["Common", " Halfling"],
                 extraLanguages: 0,
+                darkVision: 0,
             },
         },
 
@@ -158,6 +169,7 @@ const races = {
         speed: 30,
         languages: ["Common", " Orc"],
         extraLanguages: 0,
+        darkVision: 60,
     },
     "Human": {
         maxAge: 99,
@@ -171,6 +183,7 @@ const races = {
         speed: 30,
         languages: ["Common"],
         extraLanguages: 1,
+        darkVision: 0,
     },
     "Tiefling": {
         maxAge: 110,
@@ -184,5 +197,6 @@ const races = {
         speed: 30,
         languages: ["Common", " Infernal"],
         extraLanguages: 0,
+        darkVision: 60,
     },
 };
