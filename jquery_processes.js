@@ -23,9 +23,10 @@ $(document).ready(function() {
             // Matches the chosen race with the corresponding object, from which data can be drawn
             if (raceTitle === raceSelection) {
 
-                // Defaults to remove and size, speed and language information, and hide language section if race is changed
+                // Defaults to remove and size, speed, darkvision and language information, and hide language section if race is changed
                 $("#size-card").text("Size:");
                 $("#speed-card").text("Speed:");
+                $("#darkvision-card").text("Darkvision Range:");
                 $("#languages-card").text("Languages:");
                 $("#language-section").hide();
 
@@ -42,9 +43,11 @@ $(document).ready(function() {
                         $("#height-card").text(physiqueArray[0]);
                         $("#weight-card").text(physiqueArray[1]);
                     })
-                    // Prints respective size, speed and language information for race
+
+                    // Prints respective size, speed, darkvision and language information for race
                     $("#size-card").text("Size: " + raceData[7][1]);
                     $("#speed-card").text("Speed: " + raceData[8][1] + "ft");
+                    $("#darkvision-card").text("Darkvision Range: " + raceData[11][1] + "ft");
                     $("#languages-card").text("Languages: " + raceData[9][1]);
 
                     // Displays the additional language selector if applicable to the race selection
@@ -94,9 +97,11 @@ $(document).ready(function() {
                                 $("#height-card").text(physiqueArray[0]);
                                 $("#weight-card").text(physiqueArray[1]);
                             })
-                            // Prints respective size, speed and language information for subrace
+                            
+                            // Prints respective size, speed, darkvision and language information for subrace
                             $("#size-card").text("Size: " + subraceData[5][1]);
                             $("#speed-card").text("Speed: " + subraceData[6][1] + "ft");
+                            $("#darkvision-card").text("Darkvision Range: " + subraceData[9][1]  + "ft");
                             $("#languages-card").text("Languages: " + subraceData[7][1]);
 
                             // Displays the additional language selector if applicable to the subrace selection
