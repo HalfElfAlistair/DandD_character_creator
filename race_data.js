@@ -9,6 +9,8 @@ const races = {
         basePounds: 175,
         size: "Medium",
         speed: 30,
+        languages: ["Common", " Draconic"],
+        extraLanguages: 0,
     },
     "Dwarf": {
         maxAge: 350,
@@ -21,6 +23,8 @@ const races = {
                 basePounds: 115,
                 size: "Medium",
                 speed: 25,
+                languages: ["Common", " Dwarvish"],
+                extraLanguages: 0,
             },
             "Mountain Dwarf": {
                 baseInches: 48,
@@ -30,6 +34,8 @@ const races = {
                 basePounds: 130,
                 size: "Medium",
                 speed: 25,
+                languages: ["Common", " Dwarvish"],
+                extraLanguages: 0,
             },
         },
     },
@@ -44,6 +50,8 @@ const races = {
                 basePounds: 90,
                 size: "Medium",
                 speed: 30,
+                languages: ["Common", " Elvish"],
+                extraLanguages: 1,
             },
             "Wood Elf": {
                 baseInches: 54,
@@ -53,6 +61,8 @@ const races = {
                 basePounds: 100,
                 size: "Medium",
                 speed: 35,
+                languages: ["Common", " Elvish"],
+                extraLanguages: 0,
             },
             "Dark Elf": {
                 baseInches: 53,
@@ -62,6 +72,8 @@ const races = {
                 basePounds: 75,
                 size: "Medium",
                 speed: 30,
+                languages: ["Common", " Elvish"],
+                extraLanguages: 0,
             },
         },
     },
@@ -76,6 +88,8 @@ const races = {
                 basePounds: 35,
                 size: "Small",
                 speed: 25,
+                languages: ["Common", " Gnomish"],
+                extraLanguages: 0,
             },
             "Rock Gnome": {
                 baseInches: 35,
@@ -85,6 +99,8 @@ const races = {
                 basePounds: 35,
                 size: "Small",
                 speed: 25,
+                languages: ["Common", " Gnomish"],
+                extraLanguages: 0,
             },
         },
 
@@ -99,6 +115,8 @@ const races = {
         basePounds: 110,
         size: "Medium",
         speed: 30,
+        languages: ["Common", " Elvish"],
+        extraLanguages: 1,
     },
     "Halfling": {
         maxAge: 150,
@@ -111,6 +129,8 @@ const races = {
                 basePounds: 35,
                 size: "Small",
                 speed: 25,
+                languages: ["Common", " Halfling"],
+                extraLanguages: 0,
             },
             "Stout": {
                 baseInches: 31,
@@ -120,6 +140,8 @@ const races = {
                 basePounds: 35,
                 size: "Small",
                 speed: 25,
+                languages: ["Common", " Halfling"],
+                extraLanguages: 0,
             },
         },
 
@@ -134,6 +156,8 @@ const races = {
         basePounds: 140,
         size: "Medium",
         speed: 30,
+        languages: ["Common", " Orc"],
+        extraLanguages: 0,
     },
     "Human": {
         maxAge: 99,
@@ -145,6 +169,8 @@ const races = {
         basePounds: 110,
         size: "Medium",
         speed: 30,
+        languages: ["Common"],
+        extraLanguages: 1,
     },
     "Tiefling": {
         maxAge: 110,
@@ -156,5 +182,7 @@ const races = {
         basePounds: 110,
         size: "Medium",
         speed: 30,
+        languages: ["Common", " Infernal"],
+        extraLanguages: 0,
     },
 };
