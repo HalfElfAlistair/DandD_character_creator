@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // Hides certain sections on opening
-    $("#character-card, #subrace-section, #name-section, #age-section, #physique-section").hide();
+    $("#character-card, #subrace-section, #language-section, #name-section, #age-section, #physique-section").hide();
 
     // Creates a function that proceeds when a new option is chosen from the race selector
     $("#race-list").change(function() {
@@ -23,9 +23,11 @@ $(document).ready(function() {
             // Matches the chosen race with the corresponding object, from which data can be drawn
             if (raceTitle === raceSelection) {
 
-                // Defaults to remove and size and speed information if race is changed
+                // Defaults to remove and size, speed and language information, and hide language section if race is changed
                 $("#size-card").text("Size:");
                 $("#speed-card").text("Speed:");
+                $("#languages-card").text("Languages:");
+                $("#language-section").hide();
 
                 // Assigns a variable for the child object containing subraces
                 let subraceObject = Object.entries(raceData[1][1]);
@@ -40,9 +42,27 @@ $(document).ready(function() {
                         $("#height-card").text(physiqueArray[0]);
                         $("#weight-card").text(physiqueArray[1]);
                     })
-                    // Prints respective size and speed information for race
+                    // Prints respective size, speed and language information for race
                     $("#size-card").text("Size: " + raceData[7][1]);
                     $("#speed-card").text("Speed: " + raceData[8][1] + "ft");
+                    $("#languages-card").text("Languages: " + raceData[9][1]);
+
+                    // Displays the additional language selector if applicable to the race selection
+                    if (raceData[10][1] === 1) {
+                        $("#language-section").show();
+
+                        // Adds an 'Elvish' option if the selected race is 'Human' (otherwise removing the option).
+                        if (raceSelection === "Human") {
+                            $("#language-selector").append(`<option id="elvish-language-option">Elvish</option>`);
+                        } else {
+                            $("#elvish-language-option").remove();
+                        }
+
+                        // Appends the updated language information to ##languages-card
+                        $("#language-selector").change(function() {
+                            $("#languages-card").text("Languages: " + raceData[9][1] + ", " + $("#language-selector option:selected").val());
+                        }) 
+                    }
                 } else {
                     $("#subrace-section").show();
                 }
@@ -74,9 +94,25 @@ $(document).ready(function() {
                                 $("#height-card").text(physiqueArray[0]);
                                 $("#weight-card").text(physiqueArray[1]);
                             })
-                            // Prints respective size and speed information for subrace
+                            // Prints respective size, speed and language information for subrace
                             $("#size-card").text("Size: " + subraceData[5][1]);
                             $("#speed-card").text("Speed: " + subraceData[6][1] + "ft");
+                            $("#languages-card").text("Languages: " + subraceData[7][1]);
+
+                            // Displays the additional language selector if applicable to the subrace selection
+                            if (subraceData[8][1] === 1) {
+                                $("#language-section").show();
+
+                                // Removes the 'Elvish' option if previously added
+                                $("#elvish-language-option").remove();
+
+                                // Appends the updated language information to ##languages-card
+                                $("#language-selector").change(function() {
+                                    $("#languages-card").text("Languages: " + subraceData[7][1] + ", " + $("#language-selector option:selected").val());
+                                })
+                            } else {
+                                $("#language-section").hide();
+                            }
                         }
 
                     }
