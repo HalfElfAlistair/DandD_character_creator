@@ -16,6 +16,48 @@ const races = {
             "Draconic Ancestry": "You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry dropdown. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.",
             "Breath Weapon": "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can't use it again until you complete a short or long rest.",
             "Damage Resistance": "You have resistance to the damage type associated with your draconic ancestry."
+        },
+        dragonType: {
+            "Black": {
+                "Damage Type": "Acid",
+                "Breath Weapon": "5 by 30 ft. line (Dex. save)"
+            },
+            "Blue": {
+                "Damage Type": "Lightning",
+                "Breath Weapon": "5 by 30 ft. line (Dex. save)"
+            },
+            "Brass": {
+                "Damage Type": "Fire",
+                "Breath Weapon": "5 by 30 ft. line (Dex. save)" 
+            },
+            "Bronze": {
+                "Damage Type": "Lightning",
+                "Breath Weapon": "5 by 30 ft. line (Dex. save)" 
+            },
+            "Copper": {
+                "Damage Type": "Acid",
+                "Breath Weapon": "5 by 30 ft. line (Dex. save)"
+            },
+            "Gold": {
+                "Damage Type": "Fire",
+                "Breath Weapon": "15 ft. cone (Dex. save)"
+            },
+            "Green": {
+                "Damage Type": "Poison",
+                "Breath Weapon": "15 ft. cone (Con. save)"
+            },
+            "Red": {
+                "Damage Type": "Fire",
+                "Breath Weapon": "15 ft. cone (Dex. save)"
+            },
+            "Silver": {
+                "Damage Type": "Cold",
+                "Breath Weapon": "15 ft. cone (Con. save)"
+            },
+            "White": {
+                "Damage Type": "Cold",
+                "Breath Weapon": "15 ft. cone (Con. save)"
+            },
         }
     },
     "Dwarf": {
