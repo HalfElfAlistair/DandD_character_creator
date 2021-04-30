@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // Hides certain sections on opening
-    $("#character-card, #subrace-section, #language-section, #name-section, #age-section, #physique-section").hide();
+    $("#character-card, #subrace-section, #language-section, #draconic-ancestry-section, #name-section, #age-section, #physique-section").hide();
 
     // Creates a function that proceeds when a new option is chosen from the race selector
     $("#race-list").change(function() {
@@ -23,12 +23,48 @@ $(document).ready(function() {
             // Matches the chosen race with the corresponding object, from which data can be drawn
             if (raceTitle === raceSelection) {
 
-                // Defaults to remove and size, speed, darkvision and language information, and hide language section if race is changed
+                // Defaults to remove and size, speed, darkvision and language information, and hide language & draconic-ancestry sections if race is changed
                 $("#size-card").text("Size:");
                 $("#speed-card").text("Speed:");
                 $("#darkvision-card").text("Darkvision Range:");
                 $("#languages-card").text("Languages:");
                 $("#language-section").hide();
+                $("#draconic-ancestry-section").hide();
+
+                // Shows draconic-ancestry-section if Dragonborn is selected from race dropdown
+                if (raceSelection === "Dragonborn") {
+                    $("#draconic-ancestry-section").show();
+                }
+
+                // Establishes a variable for the dragonType
+                let dragonTypeObject = Object.entries(raceData[13][1])
+
+                // Loops through dragonTypeObject, creates a variable for the dragon titles & data, uses titles for options in #draconic-ancestry-selector and titles and data to fill #draconic-ancestry-table
+                for (let d = 0; d < dragonTypeObject.length; d++) {
+                    let dragonTitle = dragonTypeObject[d][0];
+                    let dragonData = Object.entries(dragonTypeObject[d][1])
+                    $("#draconic-ancestry-selector").append(`<option>${dragonTitle}</option>`);
+                    $("#draconic-ancestry-table").append(`<tr><td>${dragonTitle}</td><td>${dragonData[0][1]}</td><td>${dragonData[1][1]}</td></tr>`);
+                }
+
+                // Performs processes when a new selection is made from #draconic-ancestry-selector
+                $("#draconic-ancestry-selector").change(function() {
+
+                    // Defaults to refresh by removing the #dragon-type-card when user changes their selection 
+                    $("#dragon-type-card").remove();
+
+                    // creates a new variable for the selected dragon type
+                    let dragonSelection = $("#draconic-ancestry-selector option:selected").val();
+
+                    // Loops through dragonTypeObject, establishes title and data variables, matches title to selection, prints title and data to #traits-card
+                    for (let d = 0; d < dragonTypeObject.length; d++) {
+                        let dragonTitle = dragonTypeObject[d][0];
+                        let dragonData = Object.entries(dragonTypeObject[d][1])
+                        if (dragonSelection === dragonTitle) {
+                            $("#traits-card").append(`<p id="dragon-type-card"><b>Dragon Type:</b> ${dragonTitle}. <b>${dragonData[0][0]}:</b> ${dragonData[0][1]}. <b>${dragonData[1][0]}:</b> ${dragonData[1][1]}.</p>`);
+                        }
+                    }
+                })
 
                 // Defaults to remove additional trait information when race selection is changed
                 $(".additional-trait").remove();
