@@ -31,40 +31,45 @@ $(document).ready(function() {
                 $("#language-section").hide();
                 $("#draconic-ancestry-section").hide();
 
+                // Defaults to refresh by removing the #dragon-type-card, selector and table data when user changes their race selection 
+                $("#dragon-type-card").remove();
+                $(".dragon-select").remove();
+                $(".dragon-data").remove();
+                
                 // Shows draconic-ancestry-section if Dragonborn is selected from race dropdown
                 if (raceSelection === "Dragonborn") {
                     $("#draconic-ancestry-section").show();
-                }
 
-                // Establishes a variable for the dragonType
-                let dragonTypeObject = Object.entries(raceData[13][1])
+                    // Establishes a variable for the dragonType
+                    let dragonTypeObject = Object.entries(raceData[13][1])
 
-                // Loops through dragonTypeObject, creates a variable for the dragon titles & data, uses titles for options in #draconic-ancestry-selector and titles and data to fill #draconic-ancestry-table
-                for (let d = 0; d < dragonTypeObject.length; d++) {
-                    let dragonTitle = dragonTypeObject[d][0];
-                    let dragonData = Object.entries(dragonTypeObject[d][1])
-                    $("#draconic-ancestry-selector").append(`<option>${dragonTitle}</option>`);
-                    $("#draconic-ancestry-table").append(`<tr><td>${dragonTitle}</td><td>${dragonData[0][1]}</td><td>${dragonData[1][1]}</td></tr>`);
-                }
-
-                // Performs processes when a new selection is made from #draconic-ancestry-selector
-                $("#draconic-ancestry-selector").change(function() {
-
-                    // Defaults to refresh by removing the #dragon-type-card when user changes their selection 
-                    $("#dragon-type-card").remove();
-
-                    // creates a new variable for the selected dragon type
-                    let dragonSelection = $("#draconic-ancestry-selector option:selected").val();
-
-                    // Loops through dragonTypeObject, establishes title and data variables, matches title to selection, prints title and data to #traits-card
+                    // Loops through dragonTypeObject, creates a variable for the dragon titles & data, uses titles for options in #draconic-ancestry-selector and titles and data to fill #draconic-ancestry-table
                     for (let d = 0; d < dragonTypeObject.length; d++) {
                         let dragonTitle = dragonTypeObject[d][0];
                         let dragonData = Object.entries(dragonTypeObject[d][1])
-                        if (dragonSelection === dragonTitle) {
-                            $("#traits-card").append(`<p id="dragon-type-card"><b>Dragon Type:</b> ${dragonTitle}. <b>${dragonData[0][0]}:</b> ${dragonData[0][1]}. <b>${dragonData[1][0]}:</b> ${dragonData[1][1]}.</p>`);
-                        }
+                        $("#draconic-ancestry-selector").append(`<option class="dragon-select">${dragonTitle}</option>`);
+                        $("#draconic-ancestry-table").append(`<tr class="dragon-data"><td>${dragonTitle}</td><td>${dragonData[0][1]}</td><td>${dragonData[1][1]}</td></tr>`);
                     }
-                })
+
+                    // Performs processes when a new selection is made from #draconic-ancestry-selector
+                    $("#draconic-ancestry-selector").change(function() {
+
+                        // Defaults to refresh by removing the #dragon-type-card when user changes their selection 
+                        $("#dragon-type-card").remove();
+
+                        // creates a new variable for the selected dragon type
+                        let dragonSelection = $("#draconic-ancestry-selector option:selected").val();
+
+                        // Loops through dragonTypeObject, establishes title and data variables, matches title to selection, prints title and data to trait
+                        for (let d = 0; d < dragonTypeObject.length; d++) {
+                            let dragonTitle = dragonTypeObject[d][0];
+                            let dragonData = Object.entries(dragonTypeObject[d][1])
+                            if (dragonSelection === dragonTitle) {
+                                $("#traits-card").append(`<p id="dragon-type-card"><b>Dragon Type:</b> ${dragonTitle}. <b>${dragonData[0][0]}:</b> ${dragonData[0][1]}. <b>${dragonData[1][0]}:</b> ${dragonData[1][1]}.</p>`);
+                            }
+                        }
+                    })
+                }
 
                 // Defaults to remove additional trait information when race selection is changed
                 $(".additional-trait").remove();
@@ -143,7 +148,7 @@ $(document).ready(function() {
                                 $("#height-card").text(physiqueArray[0]);
                                 $("#weight-card").text(physiqueArray[1]);
                             })
-                            
+
                             // Prints respective size, speed, darkvision and language information for subrace
                             $("#size-card").text("Size: " + subraceData[5][1]);
                             $("#speed-card").text("Speed: " + subraceData[6][1] + "ft");
@@ -174,20 +179,13 @@ $(document).ready(function() {
                                 $("#traits-card").append(`<p class="additional-trait">${traits[t][0]}: ${traits[t][1]}</p>`);
                             }
                         }
-
                     }
-
                 })
-
 
                 // Assigns a maximum value to the age selector input, based on chosen race
                 $("#character-age").attr("max", raceData[0][1]);
-
-                
-
             }
-        }
-        
+        } 
     });
 
     // name function
@@ -201,12 +199,6 @@ $(document).ready(function() {
         let ageSelection = $("#character-age").val();
         $("#age-card").text("Age: " + ageSelection);
     });
-
-
-
-
-
-
 
     // Hides #previous button on load
     $("#previous").hide();
@@ -225,8 +217,7 @@ $(document).ready(function() {
         }
     })
 
-
-    // Nav functions to show next or previous sections and hide others
+    // Nav and show/hide card button functions
     $("#next").click(function() {
         $("#physical-creation section:visible").next().show().prev().hide();
     });
@@ -235,7 +226,6 @@ $(document).ready(function() {
         $("#physical-creation section:visible").prev().show().next().hide();
     });
 
-    // Button to toggle between a choice of showing or hiding the character card
     $("#show-hide-toggle").click(function() {
         if ($("#show-hide-toggle").text() == "Show Card") {
             $("#character-card").show();
@@ -245,5 +235,4 @@ $(document).ready(function() {
             $("#show-hide-toggle").text("Show Card");
         }
     })
-
 });
