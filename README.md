@@ -61,7 +61,7 @@ Github: [HalfElfAlistair](https://github.com/HalfElfAlistair)
 ## Acknowledgments
 
 ### D&D Players Handbook
-As well as providing the information needed to build this project, I'll also be using excerpts from the handbook for feature descriptions etc.
+As well as providing the information needed to build this project, I've also used excerpts from the handbook for feature descriptions etc.
 
 ### Jamie Barnet
 A very good friend who actually got me the Players Handbook and has been learning to code at a similar time as me.
