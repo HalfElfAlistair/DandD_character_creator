@@ -15,6 +15,10 @@ $(document).ready(function() {
         // Assigns the races object from race_data to a variable
         let racesObject = Object.entries(races);
 
+        // Resets default-subrace selector option when race selection is changed
+        $("#subrace-default").remove();
+        $(".subrace-selector").append(`<option id="subrace-default" disabled selected value>Choose a subrace from the dropdown list!</option>`);
+
         // Loops through racesObject and assigns variables for child objects and their data
         for (let i = 0; i < racesObject.length; i++) {
             let raceTitle = racesObject[i][0]
