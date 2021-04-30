@@ -30,6 +30,9 @@ $(document).ready(function() {
                 $("#languages-card").text("Languages:");
                 $("#language-section").hide();
 
+                // Defaults to remove additional trait information when race selection is changed
+                $(".additional-trait").remove();
+
                 // Assigns a variable for the child object containing subraces
                 let subraceObject = Object.entries(raceData[1][1]);
 
@@ -66,6 +69,13 @@ $(document).ready(function() {
                             $("#languages-card").text("Languages: " + raceData[9][1] + ", " + $("#language-selector option:selected").val());
                         }) 
                     }
+
+                    // Prints any relevant additional trait information
+                    let traits = Object.entries(raceData[12][1]);
+                        for (let t = 0; t < traits.length; t++) {
+                            $("#traits-card").append(`<p class="additional-trait">${traits[t][0]}: ${traits[t][1]}</p>`);
+                        }
+
                 } else {
                     $("#subrace-section").show();
                 }
@@ -117,6 +127,15 @@ $(document).ready(function() {
                                 })
                             } else {
                                 $("#language-section").hide();
+                            }
+
+                            // Defaults to remove additional trait information when subrace selection is changed
+                            $(".additional-trait").remove();
+
+                            // Prints any relevant additional trait information
+                            let traits = Object.entries(subraceData[10][1]);
+                            for (let t = 0; t < traits.length; t++) {
+                                $("#traits-card").append(`<p class="additional-trait">${traits[t][0]}: ${traits[t][1]}</p>`);
                             }
                         }
 
