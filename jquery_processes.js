@@ -17,7 +17,7 @@ $(document).ready(function() {
 
         // Resets default-subrace selector option when race selection is changed
         $("#subrace-default").remove();
-        $(".subrace-selector").append(`<option id="subrace-default" disabled selected value>Choose a subrace from the dropdown list!</option>`);
+        $(".subrace-selector").append(`<option id="subrace-default" disabled selected value>Choose a subrace!</option>`);
 
         // Loops through racesObject and assigns variables for child objects and their data
         for (let i = 0; i < racesObject.length; i++) {
