@@ -19,6 +19,9 @@ $(document).ready(function() {
         $("#subrace-default").remove();
         $(".subrace-selector").append(`<option id="subrace-default" disabled selected value>Choose a subrace!</option>`);
 
+        // Resets css for #physical-creation sections when race is changed
+        $("#physical-creation").css("height","288px");
+
         // Loops through racesObject and assigns variables for child objects and their data
         for (let i = 0; i < racesObject.length; i++) {
             let raceTitle = racesObject[i][0]
@@ -43,6 +46,16 @@ $(document).ready(function() {
                 // Shows draconic-ancestry-section if Dragonborn is selected from race dropdown
                 if (raceSelection === "Dragonborn") {
                     $("#draconic-ancestry-section").show();
+
+                    // Changes #physical-creation height to 466px when raceSelection is Dragonborn but only when #race-section is visible as this section contains the draconic ancestry table, the others don't need the extra space 
+                    $("#physical-creation").css("height","466px");
+                    $(".nav-button").click(function() {
+                        if ($("#race-section").is(":visible")) {
+                            $("#physical-creation").css("height","466px");
+                        } else {
+                            $("#physical-creation").css("height","288px");
+                        }
+                    })
 
                     // Establishes a variable for the dragonType
                     let dragonTypeObject = Object.entries(raceData[13][1])
