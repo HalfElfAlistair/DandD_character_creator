@@ -48,10 +48,10 @@ $(document).ready(function() {
                     $("#draconic-ancestry-section").show();
 
                     // Changes #physical-creation height to 466px when raceSelection is Dragonborn but only when #race-section is visible as this section contains the draconic ancestry table, the others don't need the extra space 
-                    $("#physical-creation").css("height","466px");
+                    $("#physical-creation").css("height","581px");
                     $(".nav-button").click(function() {
                         if ($("#race-section").is(":visible")) {
-                            $("#physical-creation").css("height","466px");
+                            $("#physical-creation").css("height","581px");
                         } else {
                             $("#physical-creation").css("height","288px");
                         }
