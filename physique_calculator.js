@@ -36,8 +36,8 @@ function physiqueCalculator(heightDiceType, baseInches, weightDiceRolls, weightD
     let weightResult = ((weightRollTotal * heightRollTotal) + basePounds);
 
     // The complete Height and Weight calculations are assigned to variables and formatted with strings for an appropriate display. They are then added to an array which is returned
-    let heightToPrint = ("Height: " + feetResult + "'" + inchesResult + '"');
-    let weightToPrint = ("Weight: " + weightResult + " lbs");
+    let heightToPrint = (feetResult + "'" + inchesResult + '"');
+    let weightToPrint = (weightResult + " lbs");
     let hwResultArray = [heightToPrint, weightToPrint];
     return hwResultArray;
 }
