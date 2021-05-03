@@ -42,7 +42,7 @@
                 <div id="language-section">
                     <p>Select an additional language.</p>
                     <select id="language-selector">
-                        <option disabled selected value>Choose a language!</option>
+                        <option id="language-default" disabled selected value>Choose a language!</option>
                         <option>Dwarvish</option>
                         <option>Giant</option>
                         <option>Gnomish</option>
@@ -69,18 +69,21 @@
             <section id="name-section">
                 <div>
                     <h2>Name</h2>
+                    <p>Enter a name for your character in the field below.</p>
                     <input type="text" class="textbox" id="character-name" placeholder="Choose a name" required>
                 </div>
             </section>
             <section id="age-section">
                 <div>
                     <h2>Age</h2>
+                    <p>Enter your character's age.</p>
                     <input type="number" class="textbox" id="character-age" placeholder="Choose your age" min="1" max="" required>
                 </div>
             </section>
             <section id="physique-section">
                 <div>
                     <h2>Physique</h2>
+                    <p>Click the button below to generate a height and weight for your character.</p>
                     <input value="Physique Roll" type="button" id="physique-roller" class="roll-button">
                 </div>
             </section>
@@ -92,9 +95,6 @@
             <div>
                 <button type="button" id="next" class="nav-button">Next</button>
             </div>
-            <div class="value-info">
-                <p id="name-value" class="value-display"></p>
-            </div>
         </section>
         <section id="card-display-toggle">
             <div>
@@ -104,17 +104,16 @@
         <section id="character-card">
             <div class="card">
                 <h2>Character Card</h2>
-                <p id="name-card">Name:</p>
-                <p id="race-card">Race:</p>
-                <p id="age-card">Age:</p>
-                <p id="size-card">Size:</p>
-                <p id="height-card">Height:</p>
-                <p id="weight-card">Weight:</p>
-                <p id="speed-card">Speed:</p>
-                <p id="languages-card">Languages</p>
-                <p id="darkvision-card">Darkvision Range:</p>
+                <p id="name-card"><b>Name:</b></p>
+                <p id="race-card"><b>Race:</b></p>
+                <p id="age-card"><b>Age:</b></p>
+                <p id="size-card"><b>Size:</b></p>
+                <p id="height-card"><b>Height:</b></p>
+                <p id="weight-card"><b>Weight:</b></p>
+                <p id="speed-card"><b>Speed:</b></p>
+                <p id="languages-card"><b>Languages:</b></p>
+                <p id="darkvision-card"><b>Darkvision Range:</b></p>
                 <div id="traits-card"></div>
             </div>
-            <section id="confirmation">
         </section>
     </body>
