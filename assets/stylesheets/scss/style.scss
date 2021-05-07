@@ -224,3 +224,20 @@ table {
         margin: 35px 35px 35px 0;
     }
 }
+
+@media only screen and (min-width: 1024px) {
+    h2 {
+		font-size: 28px;
+	}
+
+    p {
+		font-size: 18px;
+	}
+
+    select,
+    input,
+    table {
+    font-size: 16px;
+    }
+    
+}
