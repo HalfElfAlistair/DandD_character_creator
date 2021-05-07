@@ -44,6 +44,12 @@ $secondary-light: #FBFBF0;
     border-radius: 3px;
 }
 
+@mixin sections-537min() {
+    margin: 35px auto;
+    padding: 17px;
+    width: 427px;
+}
+
 body {
     font-family: Verdana, Arial, sans-serif;
 	overflow-x: hidden;
@@ -134,4 +140,22 @@ table {
     background-color: $primary-light;
     color: $primary-color;
     border: none;
+}
+
+@media only screen and (min-width: 537px) {
+    #physical-creation,
+    #character-card,
+    #card-display-toggle {
+        @include sections-537min();
+    }
+
+    #nav-section {
+        margin: 35px auto;
+        padding: 17px 0;
+        width: 463px;
+    }
+    
+    #dark-light-switch {
+        @include sections-537min();
+    }
 }

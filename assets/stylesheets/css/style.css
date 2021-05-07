@@ -131,4 +131,26 @@ table tr:nth-child(even) {
   text-decoration: underline;
 }
 
+@media only screen and (min-width: 537px) {
+  #physical-creation,
+#character-card,
+#card-display-toggle {
+    margin: 35px auto;
+    padding: 17px;
+    width: 427px;
+  }
+
+  #nav-section {
+    margin: 35px auto;
+    padding: 17px 0;
+    width: 463px;
+  }
+
+  #dark-light-switch {
+    margin: 35px auto;
+    padding: 17px;
+    width: 427px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
