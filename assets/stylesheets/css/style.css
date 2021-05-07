@@ -16,6 +16,28 @@ p {
   color: #3D3D3D;
 }
 
+select,
+input {
+  width: 100%;
+  padding: 2px;
+  font-size: 14px;
+  color: #101010;
+  background-color: #FBFBF0;
+}
+
+table {
+  width: 100%;
+  border: solid 1px #6E3635;
+  margin-top: 10%;
+  font-size: 14px;
+}
+table tr:nth-child(odd) {
+  background-color: #FBFBF0;
+}
+table tr:nth-child(even) {
+  background-color: #E6FECD;
+}
+
 #physical-creation {
   background-color: #EFEDC0;
   height: auto;
@@ -31,6 +53,36 @@ p {
   margin: 5%;
   padding: 5%;
   border-radius: 3px;
+}
+
+#physique-roller {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  background-color: #6E3635;
+  color: #EFEDC0;
+  border: none;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+#physique-roller:hover {
+  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
+}
+
+#show-hide-table {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  background-color: #6E3635;
+  color: #EFEDC0;
+  border: none;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  width: 100px;
+}
+#show-hide-table:hover {
+  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
 }
 
 #nav-section {
