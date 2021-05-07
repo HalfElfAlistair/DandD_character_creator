@@ -16,4 +16,67 @@ p {
   color: #3D3D3D;
 }
 
+#physical-creation {
+  background-color: #EFEDC0;
+  height: auto;
+  border: solid 1px #6E3635;
+  margin: 5%;
+  padding: 5%;
+  border-radius: 3px;
+}
+
+#character-card {
+  background-color: #EFEDC0;
+  border: solid 1px #6E3635;
+  margin: 5%;
+  padding: 5%;
+  border-radius: 3px;
+}
+
+#nav-section {
+  margin: 5%;
+  height: 31px;
+}
+#nav-section button {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  width: 90px;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  background-color: #EFEDC0;
+  color: #6E3635;
+  border: none;
+}
+#nav-section button:hover {
+  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
+}
+
+#next {
+  float: right;
+}
+
+#previous {
+  float: left;
+}
+
+#show-hide-toggle {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  width: 90px;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0);
+  background-color: #EFEDC0;
+  color: #6E3635;
+  border: none;
+}
+#show-hide-toggle:hover {
+  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=style.css.map */
