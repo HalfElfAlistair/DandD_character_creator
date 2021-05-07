@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // Hides certain sections on opening
-    $("#character-card, #subrace-section, #language-section, #draconic-ancestry-section, #name-section, #age-section, #physique-section").hide();
+    $("#character-card, #subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section").hide();
 
     // Creates a function that proceeds when a new option is chosen from the race selector
     $("#race-list").change(function() {
@@ -20,6 +20,11 @@ $(document).ready(function() {
         $(".subrace-selector").append(`<option id="subrace-default" disabled selected value>Choose a subrace!</option>`);
         $("#language-default").remove();
         $("#language-selector").prepend(`<option id="language-default" disabled selected value>Choose a language!</option>`);
+
+        // Ensures #physical-creation height adjusts to contain language dropdowns, #draconic-ancestry-table etc when visible
+        $(window).click(function() {
+            $("#physical-creation").css("height","auto");
+        })
 
         // Resets css for #physical-creation sections when race is changed
         $("#physical-creation").css("height","288px");
@@ -266,6 +271,16 @@ $(document).ready(function() {
         } else {
             $("#character-card").hide();
             $("#show-hide-toggle").text("Show Card");
+        }
+    })
+
+    $("#show-hide-table").click(function() {
+        if ($("#show-hide-table").text() == "Show Table") {
+            $("#draconic-ancestry-table").show();
+            $("#show-hide-table").text("Hide Table");
+        } else {
+            $("#draconic-ancestry-table").hide();
+            $("#show-hide-table").text("Show Table");
         }
     })
 
