@@ -1,0 +1,19 @@
+body {
+  font-family: Verdana, Arial, sans-serif;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  line-height: 1.6;
+  background-color: #FBFBF0;
+}
+
+h2 {
+  color: #6E3635;
+}
+
+p {
+  color: #3D3D3D;
+}
+
+/*# sourceMappingURL=style.css.map */
