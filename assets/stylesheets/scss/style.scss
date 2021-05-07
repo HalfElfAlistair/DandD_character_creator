@@ -4,3 +4,22 @@ $primary-dark: #101010;
 $secondary-dark: #3D3D3D;
 $primary-light: #EFEDC0;
 $secondary-light: #FBFBF0;
+
+
+body {
+    font-family: Verdana, Arial, sans-serif;
+	overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+	margin: 0;
+	line-height: 1.6;
+    background-color: $secondary-light;
+}
+
+h2 {
+    color: $primary-color;
+}
+
+p {
+    color: $secondary-dark;
+}
