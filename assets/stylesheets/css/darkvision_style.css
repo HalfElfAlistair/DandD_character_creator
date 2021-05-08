@@ -1,0 +1,260 @@
+body {
+  font-family: Bahnschrift, Arial, sans-serif;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  line-height: 1.6;
+  background-color: #161616;
+}
+
+h2 {
+  color: #E9E0F0;
+}
+
+p {
+  color: #DFCEE9;
+}
+
+b {
+  color: #daa8ed;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 2px;
+  font-size: 14px;
+  color: #E9E0F0;
+  background-color: #161616;
+  border: none;
+}
+
+table {
+  width: 100%;
+  margin-top: 10%;
+  font-size: 14px;
+}
+table tr:nth-child(odd) {
+  background-color: #161616;
+  color: #DFCEE9;
+}
+table tr:nth-child(even) {
+  background-color: #38214d;
+  color: #DFCEE9;
+}
+
+#dark-light-switch {
+  margin: 5%;
+}
+#dark-light-switch button {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  width: 90px;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0);
+  background-color: #E6FECD;
+  color: #161616;
+  border: solid 1.2px #E6FECD;
+}
+#dark-light-switch button:hover {
+  box-shadow: 0px 8px 6px 0 rgba(125, 78, 170, 0.7);
+  text-decoration: underline;
+}
+
+#physical-creation {
+  background-color: #272727;
+  height: auto;
+  border: solid 1px #272727;
+  margin: 5%;
+  padding: 5%;
+  border-radius: 3px;
+}
+
+#character-card {
+  background-color: #272727;
+  border: solid 1px #272727;
+  margin: 5%;
+  padding: 5%;
+  border-radius: 3px;
+}
+
+#physique-roller {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  background-color: #38214d;
+  color: #E9E0F0;
+  border: none;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+#physique-roller:hover {
+  box-shadow: 0px 4px 3px 0 rgba(125, 78, 170, 0.4);
+  text-decoration: underline;
+}
+
+#show-hide-table {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  background-color: #38214d;
+  color: #E9E0F0;
+  border: none;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  width: 100px;
+}
+#show-hide-table:hover {
+  box-shadow: 0px 4px 3px 0 rgba(125, 78, 170, 0.4);
+  text-decoration: underline;
+}
+
+#nav-section {
+  margin: 5%;
+  height: 31px;
+}
+#nav-section button {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  width: 90px;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  background-color: #272727;
+  color: #E9E0F0;
+  border: solid 1px #272727;
+}
+#nav-section button:hover {
+  box-shadow: 0px 8px 6px 0 rgba(125, 78, 170, 0.7);
+  text-decoration: underline;
+}
+
+#next {
+  float: right;
+}
+
+#previous {
+  float: left;
+}
+
+#show-hide-toggle {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  width: 90px;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0);
+  background-color: #272727;
+  color: #E9E0F0;
+  border: solid 1px #272727;
+}
+#show-hide-toggle:hover {
+  box-shadow: 0px 8px 6px 0 rgba(125, 78, 170, 0.7);
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 537px) {
+  #physical-creation,
+#character-card,
+#card-display-toggle {
+    margin: 35px auto;
+    padding: 17px;
+    width: 427px;
+  }
+
+  #nav-section {
+    margin: 35px auto;
+    padding: 17px 0;
+    width: 463px;
+  }
+
+  #dark-light-switch {
+    margin: 35px auto;
+    padding: 17px;
+    width: 427px;
+  }
+}
+@media only screen and (min-width: 960px) {
+  h2 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  select,
+input,
+table {
+    font-size: 15px;
+  }
+
+  body {
+    display: grid;
+    grid-template-columns: 533px auto;
+  }
+
+  #column-1 {
+    grid-column-start: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #column-2 {
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #dark-light-switch {
+    order: 1;
+    margin: 35px;
+  }
+
+  #physical-creation {
+    order: 2;
+    margin: 35px;
+  }
+
+  #nav-section {
+    order: 3;
+    margin: 35px;
+  }
+
+  #card-display-toggle {
+    order: 1;
+    width: auto;
+    margin: 35px 35px 35px 0;
+  }
+
+  #character-card {
+    order: 2;
+    width: auto;
+    margin: 35px 35px 35px 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  h2 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  select,
+input,
+table {
+    font-size: 16px;
+  }
+}
+
+/*# sourceMappingURL=darkvision.css.map */
