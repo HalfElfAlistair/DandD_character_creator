@@ -2,7 +2,6 @@ $primary-color: #38214d;
 $primary-light: #E9E0F0;
 $secondary-light: #DFCEE9;
 $primary-dark: #272727;
-// $secondary-dark: #101010;
 $secondary-dark: #161616;
 
 @mixin horizontal-center() {
@@ -204,23 +203,16 @@ table {
 
     body {
         display: grid;
-        // grid-template-rows: 134px auto 134px;
         grid-template-columns: 533px auto;
     }
 
-    // #row-1 {
-    //     grid-row-start: 1;
-    //     width: 100%;
-    // }
 
     #column-1 {
-        // grid-row-start: 2;
         grid-column-start: 1;
         @include flex-column();
     }
 
     #column-2 {
-        // grid-row-start: 2;
         grid-column-start: 2;
         @include flex-column();
     }
