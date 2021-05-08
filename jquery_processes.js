@@ -284,4 +284,14 @@ $(document).ready(function() {
         }
     })
 
+    $("#dark-light-toggle").click(function() {
+        if ($("#dark-light-toggle").text() == "Darkvision") {
+            $('link[href="assets/stylesheets/css/daylight_style.css"]').attr("href", "assets/stylesheets/css/darkvision_style.css");
+            $("#dark-light-toggle").text("Daylight");
+        } else {
+            $('link[href="assets/stylesheets/css/darkvision_style.css"]').attr("href", "assets/stylesheets/css/daylight_style.css");
+            $("#dark-light-toggle").text("Darkvision");
+        }
+    })
+
 });
