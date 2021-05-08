@@ -38,6 +38,28 @@ table tr:nth-child(even) {
   background-color: #E6FECD;
 }
 
+#dark-light-switch {
+  margin: 5%;
+}
+#dark-light-switch button {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  width: 90px;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0);
+  background-color: #101010;
+  color: #E6FECD;
+  border: solid 1.2px black;
+}
+#dark-light-switch button:hover {
+  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
+}
+
 #physical-creation {
   background-color: #EFEDC0;
   height: auto;
@@ -229,4 +251,4 @@ table {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=daylight_style.css.map */

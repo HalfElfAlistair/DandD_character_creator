@@ -98,6 +98,17 @@ table {
     }
 }
 
+#dark-light-switch {
+    margin: 5%;
+    button {
+        @include nav-button();
+        @include horizontal-center();
+        background-color: $primary-dark;
+        color: $secondary-color;
+        border: solid 1.2px black;
+    }
+}
+
 #physical-creation {
     background-color: $primary-light;
     height: auto;
