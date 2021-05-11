@@ -27,7 +27,7 @@
                     <div>
                         <p>First, select your race.</p>
                         <select id="race-list" required>
-                            <option disabled selected value>Choose a race!</option>
+                            <option disabled selected>Choose a race!</option>
                             <option>Dragonborn</option>
                             <option>Dwarf</option>
                             <option>Elf</option>
@@ -42,13 +42,15 @@
                     <div id="subrace-section">
                         <p>Choose a subrace.</p>
                         <div class="subraces">
-                            <select class="subrace-selector"></select>
+                            <select class="subrace-selector">
+                                <option id="subrace-default" disabled selected>Choose a subrace!</option>
+                            </select>
                         </div>
                     </div>
                     <div id="language-section">
                         <p>Select an additional language.</p>
                         <select id="language-selector">
-                            <option id="language-default" disabled selected value>Choose a language!</option>
+                            <option id="language-default" disabled selected>Choose a language!</option>
                             <option>Dwarvish</option>
                             <option>Giant</option>
                             <option>Gnomish</option>
@@ -60,7 +62,7 @@
                     <div id="draconic-ancestry-section">
                         <p>Choose a dragon type.</p>
                         <select id="draconic-ancestry-selector">
-                            <option disabled selected value>Select a dragon type!</option>
+                            <option disabled selected>Select a dragon type!</option>
                         </select>
                         <p>Use the table below to help assist your decision.</p>
                         <div>
