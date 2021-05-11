@@ -29,6 +29,9 @@ $(document).ready(function() {
         // Resets css for #physical-creation sections when race is changed
         $("#physical-creation").css("height","288px");
 
+        // // Defaults to remove 'Elvish' option from language selectors when race is changed
+        // $("#elvish-language-option").remove();
+
         // Loops through racesObject and assigns variables for child objects and their data
         for (let i = 0; i < racesObject.length; i++) {
             let raceTitle = racesObject[i][0]
@@ -49,6 +52,9 @@ $(document).ready(function() {
                 $("#dragon-type-card").remove();
                 $(".dragon-select").remove();
                 $(".dragon-data").remove();
+
+                // Defaults to remove 'Elvish' option from language selectors when race is changed
+                $("#elvish-language-option").remove();
                 
                 // Shows draconic-ancestry-section if Dragonborn is selected from race dropdown
                 if (raceSelection === "Dragonborn") {
