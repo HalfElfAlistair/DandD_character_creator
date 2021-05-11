@@ -56,6 +56,23 @@ $secondary-light: #FBFBF0;
     justify-content: flex-start
 }
 
+@mixin hyphens() {
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+@mixin break-all() {
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+
+@mixin wrap() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 body {
     font-family: Verdana, Arial, sans-serif;
 	overflow-x: hidden;
@@ -96,6 +113,11 @@ table {
             background-color: $secondary-color;
         }
     }
+}
+
+.card {
+    @include wrap();
+    @include hyphens();
 }
 
 #dark-light-switch {
@@ -250,5 +272,9 @@ table {
     table {
     font-size: 16px;
     }
-    
+
+    .card {
+        @include wrap();
+        @include hyphens();
+    }
 }
