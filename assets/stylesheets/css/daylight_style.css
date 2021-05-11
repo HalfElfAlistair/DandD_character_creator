@@ -38,6 +38,15 @@ table tr:nth-child(even) {
   background-color: #E6FECD;
 }
 
+.card {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 #dark-light-switch {
   margin: 5%;
 }
@@ -248,6 +257,15 @@ table {
 input,
 table {
     font-size: 16px;
+  }
+
+  .card {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
 }
 
