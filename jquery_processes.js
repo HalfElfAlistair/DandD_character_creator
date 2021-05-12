@@ -15,11 +15,10 @@ $(document).ready(function() {
         // Assigns the races object from race_data to a variable
         let racesObject = Object.entries(races);
 
-        // Resets default-subrace and language selector option when race selection is changed
-        $("#subrace-default").remove();
-        $(".subrace-selector").append(`<option id="subrace-default" disabled selected value>Choose a subrace!</option>`);
-        $("#language-default").remove();
-        $("#language-selector").prepend(`<option id="language-default" disabled selected value>Choose a language!</option>`);
+        // Resets subrace, language and draconic-ancestry selectors when race selection is changed
+        $(".subrace-selector").val($('.subrace-selector').find("option[selected]").val());
+        $("#language-selector").val($('#language-selector').find("option[selected]").val());
+        $("#draconic-ancestry-selector").val($('#draconic-ancestry-selector').find("option[selected]").val());
 
         // Ensures #physical-creation height adjusts to contain language dropdowns, #draconic-ancestry-table etc when visible
         $(window).click(function() {
