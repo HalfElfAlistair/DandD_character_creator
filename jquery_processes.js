@@ -20,6 +20,12 @@ $(document).ready(function() {
         $("#language-selector").val($('#language-selector').find("option[selected]").val());
         $("#draconic-ancestry-selector").val($('#draconic-ancestry-selector').find("option[selected]").val());
 
+        // Defaults to remove and size, speed, darkvision and language information, and hide language & draconic-ancestry sections if race is changed
+        $("#size-card").html("<b>Size:</b>");
+        $("#speed-card").html("<b>Speed:</b>");
+        $("#darkvision-card").html("<b>Darkvision Range:</b>");
+        $("#language-section, #draconic-ancestry-section").hide();
+
         // Ensures #physical-creation height adjusts to contain language dropdowns, #draconic-ancestry-table etc when visible
         $(window).click(function() {
             $("#physical-creation").css("height","auto");
@@ -38,14 +44,6 @@ $(document).ready(function() {
 
             // Matches the chosen race with the corresponding object, from which data can be drawn
             if (raceTitle === raceSelection) {
-
-                // Defaults to remove and size, speed, darkvision and language information, and hide language & draconic-ancestry sections if race is changed
-                $("#size-card").html("<b>Size:</b>");
-                $("#speed-card").html("<b>Speed:</b>");
-                $("#darkvision-card").html("<b>Darkvision Range:</b>");
-                $("#languages-card").html("<b>Languages:</b>");
-                $("#language-section").hide();
-                $("#draconic-ancestry-section").hide();
 
                 // Defaults to refresh by removing the #dragon-type-card, selector and table data when user changes their race selection 
                 $("#dragon-type-card").remove();
