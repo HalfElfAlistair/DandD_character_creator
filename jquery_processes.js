@@ -161,9 +161,8 @@ $(document).ready(function() {
                     // Appends the selected subrace to the printed HTML for race
                     $("#race-card").html("<b>Race: </b>" + raceSelection + " (<b>Subrace: </b>" + subraceSelection + ")");
 
-                    // Resets default-subrace and language selector option when subrace selection is changed
-                    $("#language-default").remove();
-                    $("#language-selector").prepend(`<option id="language-default" disabled selected value>Choose a language!</option>`);
+                    // Resets language selector option when subrace selection is changed
+                    $("#language-selector").val($('#language-selector').find("option[selected]").val());
 
                     // Loops through subraceObject and assigns variables for child objects and their data
                     for (let s = 0; s < subraceObject.length; s++) {
