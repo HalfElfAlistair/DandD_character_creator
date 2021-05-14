@@ -61,10 +61,13 @@ Github: [HalfElfAlistair](https://github.com/HalfElfAlistair)
 ## Acknowledgments
 
 ### D&D Players Handbook
-As well as providing the information needed to build this project, I've also used excerpts from the handbook for feature descriptions etc.
+As well as providing the information needed to build this project, I've also used excerpts from the handbook for feature descriptions etc and taken color scheme inspiration as well.
 
-### Jamie Barnet
-A very good friend who actually got me the Players Handbook and has been learning to code at a similar time as me.
+### Jamie & Rochelle Barnet
+Very good friends who actually got me the Players Handbook. Jamie has been learning to code and we've discussed this as a good project idea.
+
+### Max Larkins-Waugh
+Max had a look at my project once I was fairly happy with the first stage of it. He provided some brilliant recommendations for how I could improve it.
 
 ### [Learn JQuery](https://learn.jquery.com/)
 A brilliant resource for learning JQuery.
@@ -86,3 +89,5 @@ This was a project I had started to plan within my mind back when I was doing th
 I could already picture storing the different characteristics for a race, such as base height. Then taking that information and combining it with the result of a dice roller algorithm to produce a characters height value. It would work just like when using a paper and pen, the book and rolling real dice, but on screen.
 
 I also thought this would be a great way to practice JQuery, which I'd learned a bit about on the Front End Development Libraries course on FreeCodeCamp but hadn't used until now. I'd like to combine this with SCSS when working on the aesthetic design of the project as it'd be great to practice using that some more too.
+
+So far I've managed to get through the first stage of this character builder (excluding some amendments to be made from viewing feedback). That's based on the second chapter in the D&D Players Handbook, which is based around character races. I've started preparing some object data for the third chapter which deals with classes, and will continue with this once I've finished working on tweaking what I have already.
