@@ -229,10 +229,16 @@ $(document).ready(function() {
         $("#name-card").html("<b>Name: </b>" + nameSelection);
     });
 
-    // age function
+    // age function prints ageselection value to card if greater than 1 and less than 4 digits length
     $("#character-age").change(function() {
         let ageSelection = $("#character-age").val();
-        $("#age-card").html("<b>Age: </b>" + ageSelection);
+        if (ageSelection < 1) {
+            $("#age-card").html("<b>Age: </b>");
+        } else if (/[0-9]{4}/.test(ageSelection) == true) {
+            $("#age-card").html("<b>Age: </b>");
+        } else {
+            $("#age-card").html("<b>Age: </b>" + ageSelection);
+        }
     });
 
 
