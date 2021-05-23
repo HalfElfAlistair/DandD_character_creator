@@ -20,6 +20,10 @@ b {
   color: #daa8ed;
 }
 
+button {
+  font-family: Bahnschrift, Verdana, Arial, sans-serif;
+}
+
 select,
 input {
   width: 100%;
@@ -28,6 +32,7 @@ input {
   color: #E9E0F0;
   background-color: #161616;
   border: none;
+  font-family: Bahnschrift, Verdana, Arial, sans-serif;
 }
 
 table {

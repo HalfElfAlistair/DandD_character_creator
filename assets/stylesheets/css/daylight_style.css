@@ -16,6 +16,10 @@ p {
   color: #3D3D3D;
 }
 
+button {
+  font-family: Bahnschrift, Verdana, Arial, sans-serif;
+}
+
 select,
 input {
   width: 100%;
@@ -23,6 +27,7 @@ input {
   font-size: 14px;
   color: #101010;
   background-color: #FBFBF0;
+  font-family: Bahnschrift, Verdana, Arial, sans-serif;
 }
 
 table {

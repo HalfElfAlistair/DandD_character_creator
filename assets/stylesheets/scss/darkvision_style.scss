@@ -94,6 +94,10 @@ b {
     color: #daa8ed;
 }
 
+button {
+    font-family: Bahnschrift, Verdana, Arial, sans-serif;
+}
+
 select,
 input {
     width: 100%;
@@ -102,6 +106,7 @@ input {
     color: $primary-light;
     background-color: $secondary-dark;
     border: none;
+    font-family: Bahnschrift, Verdana, Arial, sans-serif;
 }
 
 table {
