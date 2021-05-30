@@ -246,6 +246,22 @@ $(document).ready(function() {
     });
 
 
+    // Function for different outcomes based on character selector choice
+    $("#character-selector").change(function() {
+
+        // When "New Character" is selected, everything resets and #physical-creation is displayed
+        if ($("#character-selector").val() == "New Character") {
+            fieldReset();
+            $("#physical-creation").show();
+
+            // Submits the character-card to localStorage as a value, with the character-name as a key
+            $("#submit-button").click(function() {
+                localStorage.setItem($("#character-name").val(), $("#character-card").html());
+            })
+        }
+    })
+
+
 
 
     // Hides #previous button on load
