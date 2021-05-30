@@ -246,6 +246,17 @@ $(document).ready(function() {
     });
 
 
+    // Assigns a variable to access localStorage
+    let storedData = Object.entries(localStorage);
+
+    // Loops through localStorage and prints stored character names as select options
+    $(window).ready(function() {
+        for (let i = 0; storedData.length; i++) {
+            $("#character-selector").append(`<option class="character-option">${storedData[i][0]}</option>`);
+        }
+    });
+
+
     // Function for different outcomes based on character selector choice
     $("#character-selector").change(function() {
 
