@@ -1,13 +1,17 @@
 $(document).ready(function() {
 
     // Hides certain sections on opening
-    $("#character-card, #subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section").hide();
+    $("#character-card, #physical-creation, #subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section, #sumbit-section, #subrace-subject").hide();
 
     // Creates a function that proceeds when a new option is chosen from the race selector
     $("#race-list").change(function() {
 
         // Establishes raceSelection input value
         let raceSelection = $("#race-list option:selected").val();
+
+        // Resets subrace part of character card when selected race is changed
+        $("#subrace-subject").hide();
+        $("#subrace-card").text("");
 
         // Prints race input value to character card
         $("#race-card").html("<b>Race: </b>" + raceSelection);
