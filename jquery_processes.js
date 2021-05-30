@@ -14,7 +14,7 @@ $(document).ready(function() {
         $("#subrace-card").text("");
 
         // Prints race input value to character card
-        $("#race-card").html("<b>Race: </b>" + raceSelection);
+        $("#race-card").text(raceSelection);
 
         // Assigns the races object from race_data to a variable
         let racesObject = Object.entries(races);
@@ -25,10 +25,10 @@ $(document).ready(function() {
         $("#draconic-ancestry-selector").val($('#draconic-ancestry-selector').find("option[selected]").val());
 
         // Defaults to remove and size, speed, darkvision and language information, and hide language & draconic-ancestry sections if race is changed
-        $("#size-card").html("<b>Size:</b>");
-        $("#speed-card").html("<b>Speed:</b>");
-        $("#darkvision-card").html("<b>Darkvision Range:</b>");
-        $("#language-section, #draconic-ancestry-section").hide();
+        $("#size-card").text("");
+        $("#speed-card").text("");
+        $("#darkvision-card").text("");
+        $("#languages-card").text("");
 
         // Defaults to refresh by removing the #dragon-type-card, selector and table data when user changes their race selection 
         $("#dragon-type-card, .dragon-select, .dragon-data").remove();
@@ -113,15 +113,15 @@ $(document).ready(function() {
                     // Assigns a function for the physique roller using respective data for non-subrace races. Once pressed, the physique roller button will enable a height and weight value, produced by the function, to be printed in HTML
                     $("#physique-roller").click(function() {
                         let physiqueArray = (physiqueCalculator(raceData[3][1], raceData[2][1], raceData[4][1], raceData[5][1], raceData[6][1]));
-                        $("#height-card").html("<b>Height: </b>" + physiqueArray[0]);
-                        $("#weight-card").html("<b>Weight: </b>" + physiqueArray[1]);
+                        $("#height-card").text(physiqueArray[0]);
+                        $("#weight-card").text(physiqueArray[1]);
                     })
 
                     // Prints respective size, speed, darkvision and language information for race
-                    $("#size-card").html("<b>Size: </b>" + raceData[7][1]);
-                    $("#speed-card").html("<b>Speed: </b>" + raceData[8][1] + "ft");
-                    $("#darkvision-card").html("<b>Darkvision Range: </b>" + raceData[11][1] + "ft");
-                    $("#languages-card").html("<b>Languages: </b>" + raceData[9][1]);
+                    $("#size-card").text(raceData[7][1]);
+                    $("#speed-card").text(raceData[8][1] + "ft");
+                    $("#darkvision-card").text(raceData[11][1] + "ft");
+                    $("#languages-card").text(raceData[9][1]);
 
                     // Displays the additional language selector if applicable to the race selection
                     if (raceData[10][1] === 1) {
@@ -134,9 +134,9 @@ $(document).ready(function() {
                             $("#elvish-language-option").remove();
                         }
 
-                        // Appends the updated language information to ##languages-card
+                        // Appends the updated language information to #languages-card
                         $("#language-selector").change(function() {
-                            $("#languages-card").html("<b>Languages: </b>" + raceData[9][1] + ", " + $("#language-selector option:selected").val());
+                            $("#languages-card").text(raceData[9][1] + ", " + $("#language-selector option:selected").val());
                         })
                     }
 
@@ -162,8 +162,9 @@ $(document).ready(function() {
                 $("#subrace-selector").change(function() {
                     let subraceSelection = $("#subrace-selector option:selected").val();
 
-                    // Appends the selected subrace to the printed HTML for race
-                    $("#race-card").html("<b>Race: </b>" + raceSelection + " (<b>Subrace: </b>" + subraceSelection + ")");
+                    // Prints both the race and subrace selections
+                    $("#race-card").text(raceSelection);
+                    $("#subrace-card").text(subraceSelection);
 
                     // Resets language selector option when subrace selection is changed
                     $("#language-selector").val($('#language-selector').find("option[selected]").val());
@@ -177,15 +178,15 @@ $(document).ready(function() {
                         if (subraceTitle === subraceSelection) {
                             $("#physique-roller").click(function() {
                                 let physiqueArray = (physiqueCalculator(subraceData[1][1], subraceData[0][1], subraceData[2][1], subraceData[3][1], subraceData[4][1]));
-                                $("#height-card").html("<b>Height: </b>" + physiqueArray[0]);
-                                $("#weight-card").html("<b>Weight: </b>" + physiqueArray[1]);
+                                $("#height-card").text(physiqueArray[0]);
+                                $("#weight-card").text(physiqueArray[1]);
                             })
 
                             // Prints respective size, speed, darkvision and language information for subrace
-                            $("#size-card").html("<b>Size: </b>" + subraceData[5][1]);
-                            $("#speed-card").html("<b>Speed: </b>" + subraceData[6][1] + "ft");
-                            $("#darkvision-card").html("<b>Darkvision Range: </b>" + subraceData[9][1]  + "ft");
-                            $("#languages-card").html("<b>Languages: </b>" + subraceData[7][1]);
+                            $("#size-card").text(subraceData[5][1]);
+                            $("#speed-card").text(subraceData[6][1] + "ft");
+                            $("#darkvision-card").text(subraceData[9][1]  + "ft");
+                            $("#languages-card").text(subraceData[7][1]);
 
                             // Displays the additional language selector if applicable to the subrace selection
                             if (subraceData[8][1] === 1) {
@@ -196,7 +197,7 @@ $(document).ready(function() {
 
                                 // Appends the updated language information to #languages-card
                                 $("#language-selector").change(function() {
-                                    $("#languages-card").html("<b>Languages: </b>" + subraceData[7][1] + ", " + $("#language-selector option:selected").val());
+                                    $("#languages-card").text(subraceData[7][1] + ", " + $("#language-selector option:selected").val());
                                 })
                             } else {
                                 $("#language-section").hide();
@@ -227,21 +228,20 @@ $(document).ready(function() {
         
     });
 
-    // name function
+    // Prints chosen name to character card
     $("#character-name").change(function() {
-        let nameSelection = $("#character-name").val();
-        $("#name-card").html("<b>Name: </b>" + nameSelection);
+        $("#name-card").text($("#character-name").val());
     });
 
     // age function prints ageselection value to card if greater than 1 and less than 4 digits length
     $("#character-age").change(function() {
         let ageSelection = $("#character-age").val();
         if (ageSelection < 1) {
-            $("#age-card").html("<b>Age: </b>");
+            $("#age-card").text("");
         } else if (/[0-9]{4}/.test(ageSelection) == true) {
-            $("#age-card").html("<b>Age: </b>");
+            $("#age-card").text("");
         } else {
-            $("#age-card").html("<b>Age: </b>" + ageSelection);
+            $("#age-card").text(ageSelection);
         }
     });
 
