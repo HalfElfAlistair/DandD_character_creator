@@ -16,7 +16,7 @@ $(document).ready(function() {
         let racesObject = Object.entries(races);
 
         // Resets subrace, language and draconic-ancestry selectors when race selection is changed
-        $(".subrace-selector").val($('.subrace-selector').find("option[selected]").val());
+        $("#subrace-selector").val($('#subrace-selector').find("option[selected]").val());
         $("#language-selector").val($('#language-selector').find("option[selected]").val());
         $("#draconic-ancestry-selector").val($('#draconic-ancestry-selector').find("option[selected]").val());
 
@@ -151,12 +151,12 @@ $(document).ready(function() {
 
                 // Loops through the relevant subrace titles and prints each one as a selector option in HTML
                 for (let s = 0; s < subraceObject.length; s++) {
-                    $(".subrace-selector").append(`<option class="subrace-option">${subraceObject[s][0]}</option>`);
+                    $("#subrace-selector").append(`<option class="subrace-option">${subraceObject[s][0]}</option>`);
                 }
 
                 // Once a subrace is selected from the dropdown, the function will assign the chosen subrace as a variable and perform some relevant tasks
-                $(".subrace-selector").change(function() {
-                    let subraceSelection = $(".subrace-selector option:selected").val();
+                $("#subrace-selector").change(function() {
+                    let subraceSelection = $("#subrace-selector option:selected").val();
 
                     // Appends the selected subrace to the printed HTML for race
                     $("#race-card").html("<b>Race: </b>" + raceSelection + " (<b>Subrace: </b>" + subraceSelection + ")");
