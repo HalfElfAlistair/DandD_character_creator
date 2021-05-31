@@ -313,8 +313,8 @@ $(document).ready(function() {
                                     let subraceData = Object.entries(subraceObject[s][1]);
 
                                     // Subrace titles are set to populate selector dropdown options, with one corresponding with the character card set as selected
-                                    $(".subrace-selector").append(`<option class="subrace-option">${subraceObject[s][0]}</option>`);
-                                    $(".subrace-selector").val($("#subrace-card").text());
+                                    $("#subrace-selector").append(`<option class="subrace-option">${subraceObject[s][0]}</option>`);
+                                    $("#subrace-selector").val($("#subrace-card").text());
 
                                     // Calculates height and weight values and prints to the character card when button is pressed
                                     if (subraceTitle == $("#subrace-card").text()) {
