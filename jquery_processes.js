@@ -304,7 +304,30 @@ $(document).ready(function() {
                                 $("#height-card").text(physiqueArray[0]);
                                 $("#weight-card").text(physiqueArray[1]);
                             })
-    
+                        } else {
+
+                            // When card indicates there is a subrace, the race object is matched to that shown on the card, subraces are looped through and variables are assigned for them
+                            if (raceTitle === $("#race-card").text()) {
+                                for (let s = 0; s < subraceObject.length; s++) {
+                                    let subraceTitle = subraceObject[s][0];
+                                    let subraceData = Object.entries(subraceObject[s][1]);
+
+                                    // Subrace titles are set to populate selector dropdown options, with one corresponding with the character card set as selected
+                                    $(".subrace-selector").append(`<option class="subrace-option">${subraceObject[s][0]}</option>`);
+                                    $(".subrace-selector").val($("#subrace-card").text());
+
+                                    // Calculates height and weight values and prints to the character card when button is pressed
+                                    if (subraceTitle == $("#subrace-card").text()) {
+                                        $("#physique-roller").click(function() {
+                                            let physiqueArray = (physiqueCalculator(subraceData[1][1], subraceData[0][1], subraceData[2][1], subraceData[3][1], subraceData[4][1]));
+                                            $("#height-card").text(physiqueArray[0]);
+                                            $("#weight-card").text(physiqueArray[1]);
+                                        })
+                                    }
+                                }
+                                // Displays subrace-section
+                                $("#subrace-section").show();
+                            }
                         }
                     }
                 }
