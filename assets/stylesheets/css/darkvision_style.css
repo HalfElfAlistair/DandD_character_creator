@@ -54,6 +54,16 @@ table tr:nth-child(even) {
   hyphens: auto;
 }
 
+.card-area {
+  margin: 16px 0;
+}
+
+.card-entries,
+.card-subjects {
+  display: inline-block;
+  margin: 0;
+}
+
 #dark-light-switch {
   margin: 5%;
 }
@@ -220,6 +230,10 @@ table {
     grid-template-columns: 533px auto;
   }
 
+  .card-area {
+    margin: 17px 0;
+  }
+
   #column-1 {
     grid-column-start: 1;
     display: flex;
@@ -285,6 +299,10 @@ table {
     hyphens: auto;
     -ms-word-break: break-all;
     word-break: break-all;
+  }
+
+  .card-area {
+    margin: 18px 0;
   }
 }
 
