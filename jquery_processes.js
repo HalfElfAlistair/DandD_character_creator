@@ -286,6 +286,27 @@ $(document).ready(function() {
                         $("#height-card").text("");
                         $("#weight-card").text("");
                     })
+
+                    // Accesses object data and loops through it, assigns variables so that data can be used for physique-roller function
+                    let racesObject = Object.entries(races);
+                    for (let i = 0; i < racesObject.length; i++) {
+                        let raceTitle = racesObject[i][0]
+                        let raceData = Object.entries(racesObject[i][1]);
+                        let subraceObject = Object.entries(raceData[1][1]);
+
+                        // Performs tasks if no subrace is indicated on character card
+                        if ($("#subrace-card").text() == "") {
+                            $("#subrace-section").hide();
+    
+                            // Calculates height and weight values and prints to the character card when button is pressed
+                            $("#physique-roller").click(function() {
+                                let physiqueArray = (physiqueCalculator(raceData[3][1], raceData[2][1], raceData[4][1], raceData[5][1], raceData[6][1]));
+                                $("#height-card").text(physiqueArray[0]);
+                                $("#weight-card").text(physiqueArray[1]);
+                            })
+    
+                        }
+                    }
                 }
             }
         }
