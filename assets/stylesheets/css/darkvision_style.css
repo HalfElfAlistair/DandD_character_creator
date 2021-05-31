@@ -88,7 +88,8 @@ table tr:nth-child(even) {
   cursor: pointer;
 }
 
-#physical-creation {
+#physical-creation,
+#storage-area {
   background-color: #272727;
   height: auto;
   border: solid 1px #272727;
