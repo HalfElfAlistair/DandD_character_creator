@@ -269,6 +269,16 @@ $(document).ready(function() {
             $("#submit-button").click(function() {
                 localStorage.setItem($("#character-name").val(), $("#character-card").html());
             })
+        } else {
+            // When a stored character name is selected #physical-creation is displayed
+            $("#physical-creation").show();
+
+            // Loops through localStorage and finds a name entry which matches the select value, then replaces the character-card html with that which was stored
+            for (let i = 0; storedData.length; i++) {
+                if (storedData[i][0] == $("#character-selector").val()) {
+                    $("#character-card").html(storedData[i][1]);
+                }
+            }
         }
     })
 
