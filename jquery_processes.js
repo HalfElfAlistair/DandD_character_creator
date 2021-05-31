@@ -273,13 +273,19 @@ $(document).ready(function() {
             // When a stored character name is selected #physical-creation is displayed
             $("#physical-creation").show();
 
-            // Loops through localStorage and finds a name entry which matches the select value, then replaces the character-card html with that which was stored. Also uses stored data to populate input fields in preparation for using submit button to update characters
+            // Loops through localStorage and finds a name entry which matches the select value, then replaces the character-card html with that which was stored. Also populates input fields with added card data in preparation for using submit button to update characters
             for (let i = 0; storedData.length; i++) {
                 if (storedData[i][0] == $("#character-selector").val()) {
                     $("#character-card").html(storedData[i][1]);
                     $("#character-name").val($("#name-card").text());
                     $("#character-age").val($("#age-card").text())
                     $("#race-list").val($("#race-card").text());
+
+                    // Resets height and weight card values when race selection changes
+                    $("#race-list").change(function() {
+                        $("#height-card").text("");
+                        $("#weight-card").text("");
+                    })
                 }
             }
         }
