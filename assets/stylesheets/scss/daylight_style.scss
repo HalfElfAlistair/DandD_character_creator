@@ -146,7 +146,19 @@ table {
     }
 }
 
-#physical-creation {
+// #storage-area {
+//     @include sections-base();
+//     background-color: $primary-light;
+//     height: auto;
+//     border: solid 1px $primary-color;
+// }
+
+#character-selector {
+    // margin: 18.5px 0px;
+}
+
+#physical-creation,
+#storage-area {
     background-color: $primary-light;
     height: auto;
     border: solid 1px $primary-color;
@@ -238,19 +250,34 @@ table {
         margin: 17px 0;
     }
 
+    #row-1 {
+        grid-row-start: 1;
+        width: 100%;
+    }
+
     #column-1 {
+        grid-row-start: 2;
         grid-column-start: 1;
         @include flex-column();
     }
 
     #column-2 {
+        grid-row-start: 2;
         grid-column-start: 2;
         @include flex-column();
     }
 
     #dark-light-switch {
+        margin: 35px;
+    }
+
+    #storage-area {
         order: 1;
         margin: 35px;
+    }
+
+    #character-selector {
+        margin: 18.5px 0px;
     }
 
     #physical-creation {

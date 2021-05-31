@@ -82,7 +82,8 @@ table tr:nth-child(even) {
   cursor: pointer;
 }
 
-#physical-creation {
+#physical-creation,
+#storage-area {
   background-color: #EFEDC0;
   height: auto;
   border: solid 1px #6E3635;
@@ -228,7 +229,13 @@ table {
     margin: 17px 0;
   }
 
+  #row-1 {
+    grid-row-start: 1;
+    width: 100%;
+  }
+
   #column-1 {
+    grid-row-start: 2;
     grid-column-start: 1;
     display: flex;
     flex-direction: column;
@@ -236,6 +243,7 @@ table {
   }
 
   #column-2 {
+    grid-row-start: 2;
     grid-column-start: 2;
     display: flex;
     flex-direction: column;
@@ -243,8 +251,16 @@ table {
   }
 
   #dark-light-switch {
+    margin: 35px;
+  }
+
+  #storage-area {
     order: 1;
     margin: 35px;
+  }
+
+  #character-selector {
+    margin: 18.5px 0px;
   }
 
   #physical-creation {
