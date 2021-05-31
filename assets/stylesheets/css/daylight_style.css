@@ -58,6 +58,12 @@ table tr:nth-child(even) {
   margin: 0;
 }
 
+.material-icons.md-18 {
+  font-size: 18px;
+  position: relative;
+  top: 3px;
+}
+
 #dark-light-switch {
   margin: 5%;
 }
@@ -82,6 +88,29 @@ table tr:nth-child(even) {
   cursor: pointer;
 }
 
+#submit-button,
+#physique-roller {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  width: 90px;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  font-family: Bahnschrift, Verdana, Arial, sans-serif;
+  position: relative;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0);
+  background-color: #6E3635;
+  color: #EFEDC0;
+  border: none;
+}
+#submit-button:hover,
+#physique-roller:hover {
+  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 #physical-creation,
 #storage-area {
   background-color: #EFEDC0;
@@ -98,23 +127,6 @@ table tr:nth-child(even) {
   margin: 5%;
   padding: 5%;
   border-radius: 3px;
-}
-
-#physique-roller {
-  border-radius: 3px;
-  font-size: 15px;
-  padding: 5px;
-  background-color: #6E3635;
-  color: #EFEDC0;
-  border: none;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
-  font-family: Bahnschrift, Verdana, Arial, sans-serif;
-  width: 100%;
-}
-#physique-roller:hover {
-  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
-  text-decoration: underline;
-  cursor: pointer;
 }
 
 #show-hide-table {
