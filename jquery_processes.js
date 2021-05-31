@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // Hides certain sections on opening
-    $("#character-card, #physical-creation, #subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section, #sumbit-section, #subrace-subject").hide();
+    $("#card-display-toggle, #nav-section, #character-card, #physical-creation, #subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section, #sumbit-section, #subrace-subject").hide();
 
     // Creates a function that proceeds when a new option is chosen from the race selector
     $("#race-list").change(function() {
@@ -260,18 +260,18 @@ $(document).ready(function() {
     // Function for different outcomes based on character selector choice
     $("#character-selector").change(function() {
 
-        // When "New Character" is selected, everything resets and #physical-creation is displayed
+        // Displays the physical creation, nav and show-hide card sections
+        $("#card-display-toggle, #physical-creation, #nav-section").show();
+
+        // When "New Character" is selected, input fields and character card reset
         if ($("#character-selector").val() == "New Character") {
             fieldReset();
-            $("#physical-creation").show();
 
             // Submits the character-card to localStorage as a value, with the character-name as a key
             $("#submit-button").click(function() {
                 localStorage.setItem($("#character-name").val(), $("#character-card").html());
             })
         } else {
-            // When a stored character name is selected #physical-creation is displayed
-            $("#physical-creation").show();
 
             // Loops through localStorage and finds a name entry which matches the select value, then replaces the character-card html with that which was stored. Also populates input fields with added card data in preparation for using submit button to update characters
             for (let i = 0; storedData.length; i++) {

@@ -22,158 +22,156 @@
                 </div>
             </div>
         </div>
-        <div id="row-2">
-            <div id="column-1">
-                <div id="storage-area">
-                    <select id="character-selector">
-                        <option class="character-option" disabled selected>Choose a character!</option>
-                        <option class="character-option">New Character</option>
-                    </select>
-                </div>
-                <div id="physical-creation">
-                    <section id="race-section">
-                        <h2>Race</h2>
-                        <div>
-                            <p>First, select your race.</p>
-                            <select id="race-list" required>
-                                <option disabled selected>Choose a race!</option>
-                                <option>Dragonborn</option>
-                                <option>Dwarf</option>
-                                <option>Elf</option>
-                                <option>Gnome</option>
-                                <option>Half-Elf</option>
-                                <option>Halfling</option>
-                                <option>Half-Orc</option>
-                                <option>Human</option>
-                                <option>Tiefling</option>
-                            </select>
-                        </div>
-                        <div id="subrace-section">
-                            <p>Choose a subrace.</p>
-                            <div class="subraces">
-                                <select id="subrace-selector">
-                                    <option id="subrace-default" disabled selected>Choose a subrace!</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div id="language-section">
-                            <p>Select an additional language.</p>
-                            <select id="language-selector">
-                                <option id="language-default" disabled selected>Choose a language!</option>
-                                <option>Dwarvish</option>
-                                <option>Giant</option>
-                                <option>Gnomish</option>
-                                <option>Goblin</option>
-                                <option>Halfling</option>
-                                <option>Orc</option>
-                            </select>
-                        </div>
-                        <div id="draconic-ancestry-section">
-                            <p>Choose a dragon type.</p>
-                            <select id="draconic-ancestry-selector">
-                                <option disabled selected>Select a dragon type!</option>
-                            </select>
-                            <p>Use the table below to help assist your decision.</p>
-                            <div>
-                                <button type="button" id="show-hide-table">Show Table</button>
-                            </div>
-                            <table id="draconic-ancestry-table">
-                                <tr>
-                                    <th>Dragon</th>
-                                    <th>Damage Type</th>
-                                    <th>Breath Weapon</th>
-                                </tr>
-                            </table>
-                        </div>
-                    </section>
-                    <section id="name-section">
-                        <div>
-                            <h2>Name</h2>
-                            <p>Enter a name for your character in the field below.</p>
-                            <input type="text" class="textbox" id="character-name" placeholder="Choose a name" required>
-                        </div>
-                    </section>
-                    <section id="age-section">
-                        <div>
-                            <h2>Age</h2>
-                            <p>Enter your character's age.</p>
-                            <input type="number" class="textbox" id="character-age" placeholder="Choose your age" min="1" max="" required>
-                        </div>
-                    </section>
-                    <section id="physique-section">
-                        <div>
-                            <h2>Physique</h2>
-                            <p>Click the button below to generate a height and weight for your character.</p>
-                            <input value="Physique Roll" type="button" id="physique-roller" class="roll-button">
-                        </div>
-                    </section>
-                    <section id="sumbit-section">
-                        <div>
-                            <h2>Submit Your Character</h2>
-                            <input value="Submit" type="button" id="submit-button">
-                        </div>
-                    </section>
-                </div>
-                <div id="nav-section">
-                    <div>
-                        <button type="button" id="previous" class="nav-button">Previous</button>
-                    </div>
-                    <div>
-                        <button type="button" id="next" class="nav-button">Next</button>
-                    </div>
-                </div>
+        <div id="column-1">
+            <div id="storage-area">
+                <select id="character-selector">
+                    <option class="character-option" disabled selected>Choose a character!</option>
+                    <option class="character-option">New Character</option>
+                </select>
             </div>
-            <div id="column-2">
-                <div id="card-display-toggle">
-                    <button type="button" id="show-hide-toggle">Show Card</button>
-                </div>
-                <section id="character-card">
-                    <div class="card">
-                        <h2>Character Card</h2>
-                        <div class="card-area">
-                            
+            <div id="physical-creation">
+                <section id="race-section">
+                    <h2>Race</h2>
+                    <div>
+                        <p>First, select your race.</p>
+                        <select id="race-list" required>
+                            <option disabled selected>Choose a race!</option>
+                            <option>Dragonborn</option>
+                            <option>Dwarf</option>
+                            <option>Elf</option>
+                            <option>Gnome</option>
+                            <option>Half-Elf</option>
+                            <option>Halfling</option>
+                            <option>Half-Orc</option>
+                            <option>Human</option>
+                            <option>Tiefling</option>
+                        </select>
+                    </div>
+                    <div id="subrace-section">
+                        <p>Choose a subrace.</p>
+                        <div class="subraces">
+                            <select id="subrace-selector">
+                                <option id="subrace-default" disabled selected>Choose a subrace!</option>
+                            </select>
                         </div>
-                        <div class="card-area">
-                            <p class="card-subjects"><b>Name:</b></p>
-                            <p id="name-card" class="card-entries"></p>
+                    </div>
+                    <div id="language-section">
+                        <p>Select an additional language.</p>
+                        <select id="language-selector">
+                            <option id="language-default" disabled selected>Choose a language!</option>
+                            <option>Dwarvish</option>
+                            <option>Giant</option>
+                            <option>Gnomish</option>
+                            <option>Goblin</option>
+                            <option>Halfling</option>
+                            <option>Orc</option>
+                        </select>
+                    </div>
+                    <div id="draconic-ancestry-section">
+                        <p>Choose a dragon type.</p>
+                        <select id="draconic-ancestry-selector">
+                            <option disabled selected>Select a dragon type!</option>
+                        </select>
+                        <p>Use the table below to help assist your decision.</p>
+                        <div>
+                            <button type="button" id="show-hide-table">Show Table</button>
                         </div>
-                        <div class="card-area">
-                            <p class="card-subjects"><b>Race:</b></p>
-                            <p id="race-card" class="card-entries"></p>
-                            <p class="card-subjects" id="subrace-subject"><b>Subrace:</b></p>
-                            <p id="subrace-card" class="card-entries"></p>
-                        </div>
-                        <div class="card-area">
-                            <p class="card-subjects"><b>Age:</b></p>
-                            <p id="age-card" class="card-entries"></p>
-                        </div>
-                        <div class="card-area">
-                            <p class="card-subjects"><b>Size:</b></p>
-                            <p id="size-card" class="card-entries"></p>
-                        </div>
-                        <div class="card-area">
-                            <p class="card-subjects"><b>Height:</b></p>
-                            <p id="height-card" class="card-entries"></p>
-                        </div>
-                        <div class="card-area">
-                            <p class="card-subjects"><b>Weight:</b></p>
-                            <p id="weight-card" class="card-entries"></p>
-                        </div>
-                        <div class="card-area">
-                            <p class="card-subjects"><b>Speed:</b></p>
-                            <p id="speed-card" class="card-entries"></p>
-                        </div>
-                        <div class="card-area">
-                            <p class="card-subjects"><b>Languages:</b></p>
-                            <p id="languages-card" class="card-entries"></p>
-                        </div>
-                        <div class="card-area">
-                            <p class="card-subjects"><b>Darkvision Range:</b></p>
-                            <p id="darkvision-card" class="card-entries"></p>
-                        </div>
-                        <div id="traits-card"></div>
+                        <table id="draconic-ancestry-table">
+                            <tr>
+                                <th>Dragon</th>
+                                <th>Damage Type</th>
+                                <th>Breath Weapon</th>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <section id="name-section">
+                    <div>
+                        <h2>Name</h2>
+                        <p>Enter a name for your character in the field below.</p>
+                        <input type="text" class="textbox" id="character-name" placeholder="Choose a name" required>
+                    </div>
+                </section>
+                <section id="age-section">
+                    <div>
+                        <h2>Age</h2>
+                        <p>Enter your character's age.</p>
+                        <input type="number" class="textbox" id="character-age" placeholder="Choose your age" min="1" max="" required>
+                    </div>
+                </section>
+                <section id="physique-section">
+                    <div>
+                        <h2>Physique</h2>
+                        <p>Click the button below to generate a height and weight for your character.</p>
+                        <input value="Physique Roll" type="button" id="physique-roller" class="roll-button">
+                    </div>
+                </section>
+                <section id="sumbit-section">
+                    <div>
+                        <h2>Submit Your Character</h2>
+                        <input value="Submit" type="button" id="submit-button">
                     </div>
                 </section>
             </div>
+            <div id="nav-section">
+                <div>
+                    <button type="button" id="previous" class="nav-button">Previous</button>
+                </div>
+                <div>
+                    <button type="button" id="next" class="nav-button">Next</button>
+                </div>
+            </div>
+        </div>
+        <div id="column-2">
+            <div id="card-display-toggle">
+                <button type="button" id="show-hide-toggle">Show Card</button>
+            </div>
+            <section id="character-card">
+                <div class="card">
+                    <h2>Character Card</h2>
+                    <div class="card-area">
+                        
+                    </div>
+                    <div class="card-area">
+                        <p class="card-subjects"><b>Name:</b></p>
+                        <p id="name-card" class="card-entries"></p>
+                    </div>
+                    <div class="card-area">
+                        <p class="card-subjects"><b>Race:</b></p>
+                        <p id="race-card" class="card-entries"></p>
+                        <p class="card-subjects" id="subrace-subject"><b>Subrace:</b></p>
+                        <p id="subrace-card" class="card-entries"></p>
+                    </div>
+                    <div class="card-area">
+                        <p class="card-subjects"><b>Age:</b></p>
+                        <p id="age-card" class="card-entries"></p>
+                    </div>
+                    <div class="card-area">
+                        <p class="card-subjects"><b>Size:</b></p>
+                        <p id="size-card" class="card-entries"></p>
+                    </div>
+                    <div class="card-area">
+                        <p class="card-subjects"><b>Height:</b></p>
+                        <p id="height-card" class="card-entries"></p>
+                    </div>
+                    <div class="card-area">
+                        <p class="card-subjects"><b>Weight:</b></p>
+                        <p id="weight-card" class="card-entries"></p>
+                    </div>
+                    <div class="card-area">
+                        <p class="card-subjects"><b>Speed:</b></p>
+                        <p id="speed-card" class="card-entries"></p>
+                    </div>
+                    <div class="card-area">
+                        <p class="card-subjects"><b>Languages:</b></p>
+                        <p id="languages-card" class="card-entries"></p>
+                    </div>
+                    <div class="card-area">
+                        <p class="card-subjects"><b>Darkvision Range:</b></p>
+                        <p id="darkvision-card" class="card-entries"></p>
+                    </div>
+                    <div id="traits-card"></div>
+                </div>
+            </section>
         </div>
     </body>
