@@ -175,18 +175,21 @@ table {
     height: 31px;
     button {
         @include nav-button();
-        background-color: $primary-light;
-        color: $primary-color;
-        border: none;
     }
 }
 
 #next {
     float: right;
+    background-color: $primary-color;
+    color: $secondary-light;
+    border: solid $primary-color 1px;
 }
 
 #previous {
     float: left;
+    background-color: $secondary-light;
+    color: $primary-color;
+    border: solid $primary-color 1px;
 }
 
 #show-hide-toggle {

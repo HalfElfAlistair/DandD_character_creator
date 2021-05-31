@@ -180,18 +180,24 @@ table {
     height: 31px;
     button {
         @include nav-button();
-        background-color: $primary-dark;
-        color: $primary-light;
-        border: solid 1px $primary-dark;
+        // background-color: $primary-dark;
+        // color: $primary-light;
+        // border: solid 1px $primary-dark;
     }
 }
 
 #next {
     float: right;
+    background-color: $primary-light;
+    color: $secondary-dark;
+    border: solid 1px $primary-light;
 }
 
 #previous {
     float: left;
+    background-color: $secondary-dark;
+    color: $primary-light;
+    border: solid 1px $primary-light;
 }
 
 #show-hide-toggle {

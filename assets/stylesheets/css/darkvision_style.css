@@ -151,9 +151,6 @@ table tr:nth-child(even) {
   width: 90px;
   box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
-  background-color: #272727;
-  color: #E9E0F0;
-  border: solid 1px #272727;
 }
 #nav-section button:hover {
   box-shadow: 0px 8px 6px 0 rgba(125, 78, 170, 0.7);
@@ -163,10 +160,16 @@ table tr:nth-child(even) {
 
 #next {
   float: right;
+  background-color: #E9E0F0;
+  color: #161616;
+  border: solid 1px #E9E0F0;
 }
 
 #previous {
   float: left;
+  background-color: #161616;
+  color: #E9E0F0;
+  border: solid 1px #E9E0F0;
 }
 
 #show-hide-toggle {
