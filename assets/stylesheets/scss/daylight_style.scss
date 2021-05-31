@@ -135,6 +135,13 @@ table {
     margin: 0;
 }
 
+.material-icons.md-18 {
+    font-size: 18px;
+    position: relative;
+    top: 3px;
+}
+
+
 #dark-light-switch {
     margin: 5%;
     button {
@@ -144,6 +151,15 @@ table {
         color: $secondary-color;
         border: solid 1.2px black;
     }
+}
+
+#submit-button,
+#physique-roller {
+    @include nav-button();
+    @include horizontal-center();
+    background-color: $primary-color;
+    color: $primary-light;
+    border: none;
 }
 
 #physical-creation,
@@ -158,11 +174,6 @@ table {
     background-color: $primary-light;
     border: solid 1px $primary-color;
     @include sections-base();
-}
-
-#physique-roller {
-    @include button-alternative();
-    width: 100%;
 }
 
 #show-hide-table {
