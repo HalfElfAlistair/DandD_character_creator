@@ -5,8 +5,8 @@ function fieldReset() {
     // Returns race select option to default
     $("#race-list").val($('#race-list').find("option[selected]").val());
 
-    // Hides creation sections other than the #race-section and hides #draconic-ancestry-table
-    $("#subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section, #sumbit-section").hide();
+    // Hides various sections and items, shows race-section, in order to meet the default appearance
+    $("#subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section, #sumbit-section, #subrace-subject").hide();
     $("#race-section").show();
 
     // Resets show/hide table button text to match hidden table
