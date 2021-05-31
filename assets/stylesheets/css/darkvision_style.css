@@ -286,6 +286,11 @@ table {
     margin: 35px 35px 35px 0;
   }
 
+  #show-hide-toggle {
+    margin-top: 15.1px;
+    margin-bottom: 15.1px;
+  }
+
   #character-card {
     order: 2;
     width: auto;
