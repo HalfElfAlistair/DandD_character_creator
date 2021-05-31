@@ -162,6 +162,9 @@ $(document).ready(function() {
                 $("#subrace-selector").change(function() {
                     let subraceSelection = $("#subrace-selector option:selected").val();
 
+                    // Displays subrace-subject
+                    $("#subrace-subject").show();
+
                     // Prints both the race and subrace selections
                     $("#race-card").text(raceSelection);
                     $("#subrace-card").text(subraceSelection);
