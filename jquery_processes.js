@@ -329,6 +329,11 @@ $(document).ready(function() {
                                 $("#subrace-section").show();
                             }
                         }
+
+                        // Submits character, plus any amendments, to localStorage
+                        $("#submit-button").click(function(){
+                            localStorage.setItem($("#character-name").val(), $("#character-card").html());
+                        })
                     }
                 }
             }
