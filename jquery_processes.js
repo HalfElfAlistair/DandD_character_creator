@@ -94,7 +94,9 @@ $(document).ready(function() {
                             let dragonTitle = dragonTypeObject[d][0];
                             let dragonData = Object.entries(dragonTypeObject[d][1])
                             if (dragonSelection === dragonTitle) {
-                                $("#traits-card").append(`<p id="dragon-type-card"><b>Dragon Type:</b> ${dragonTitle}. <b>${dragonData[0][0]}:</b> ${dragonData[0][1]}. <b>${dragonData[1][0]}:</b> ${dragonData[1][1]}.</p>`);
+                                // $("#traits-card").append(`<p id="dragon-type-card"><b>Dragon Type:</b> ${dragonTitle}. <b>${dragonData[0][0]}:</b> ${dragonData[0][1]}. <b>${dragonData[1][0]}:</b> ${dragonData[1][1]}.</p>`);
+                                $("#traits-card").append(`<div class="card-area"><p class="card-subjects"><b>Dragon Type:</b></p><span> </span><p id="dragon-type-card" class="card-entries">${dragonTitle}</p><span> </span><p class="card-subjects"><b>Damage Type:</b></p><span> </span><p id="damage-type-card" class="card-entries">${dragonData[0][1]}</p><span> </span><p class="card-subjects"><b>Breath Weapon:</b></p><span> </span><p id="breath-weapon-card" class="card-entries">${dragonData[1][1]}</p></div>`);
+                                
                             }
                         }
                     })
@@ -296,6 +298,24 @@ $(document).ready(function() {
                         let raceTitle = racesObject[i][0]
                         let raceData = Object.entries(racesObject[i][1]);
                         let subraceObject = Object.entries(raceData[1][1]);
+
+
+                        // Shows draconic-ancestry-section if Dragonborn is selected from race dropdown
+                        if ($("#race-card").text() == "Dragonborn") {
+                            $("#draconic-ancestry-section").show();
+
+                            // Establishes a variable for the dragonType
+                            let dragonTypeObject = Object.entries(raceData[13][1])
+
+                            // Loops through dragonTypeObject, creates a variable for the dragon titles & data, uses titles for options in #draconic-ancestry-selector and titles and data to fill #draconic-ancestry-table
+                            for (let d = 0; d < dragonTypeObject.length; d++) {
+                                let dragonTitle = dragonTypeObject[d][0];
+                                let dragonData = Object.entries(dragonTypeObject[d][1])
+                                $("#draconic-ancestry-selector").append(`<option class="dragon-select">${dragonTitle}</option>`);
+                                $("#draconic-ancestry-table").append(`<tr class="dragon-data"><td>${dragonTitle}</td><td>${dragonData[0][1]}</td><td>${dragonData[1][1]}</td></tr>`);
+                            }
+                            $("#draconic-ancestry-selector").val($("#dragon-type-card").text())
+                        }
 
                         // Performs tasks if no subrace is indicated on character card
                         if ($("#subrace-card").text() == "") {
