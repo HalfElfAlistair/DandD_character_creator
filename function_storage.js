@@ -61,3 +61,13 @@ function languageProcess(languageAllowance, languageDefault, raceSelection) {
         $("#language-section").hide();
     }
 }
+
+function draconicAncestrySelectorProcess(dragonTypeObject) {
+    // Loops through dragonTypeObject, creates a variable for the dragon titles & data, uses titles for options in #draconic-ancestry-selector and titles and data to fill #draconic-ancestry-table
+    for (let d = 0; d < dragonTypeObject.length; d++) {
+       let dragonTitle = dragonTypeObject[d][0];
+       let dragonData = Object.entries(dragonTypeObject[d][1])
+       $("#draconic-ancestry-selector").append(`<option class="dragon-select">${dragonTitle}</option>`);
+       $("#draconic-ancestry-table").append(`<tr class="dragon-data"><td>${dragonTitle}</td><td>${dragonData[0][1]}</td><td>${dragonData[1][1]}</td></tr>`);
+   }
+}
