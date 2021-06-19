@@ -10,6 +10,10 @@ function raceChangeResets() {
     // Defaults to hiding draconic ancestry & language sections, as well as #subrace-subject when the selected race changes
     $("#draconic-ancestry-section, #language-section, #subrace-subject").hide();
 
-    // Resets subrace part of character card when selected race is changed
+    // Defaults to remove and size, speed, darkvision, subrace and language information
+    $("#size-card").text("");
+    $("#speed-card").text("");
+    $("#darkvision-card").text("");
     $("#subrace-card").text("");
+    $("#languages-card").text("");
 }
