@@ -84,7 +84,7 @@ $(document).ready(function() {
                     $("#draconic-ancestry-selector").change(function() {
 
                         // Defaults to refresh by removing the #dragon-type-card when user changes their selection 
-                        $("#dragon-type-card").remove();
+                        $("#dragon-type-area").remove();
 
                         // creates a new variable for the selected dragon type
                         let dragonSelection = $("#draconic-ancestry-selector option:selected").val();
@@ -94,8 +94,7 @@ $(document).ready(function() {
                             let dragonTitle = dragonTypeObject[d][0];
                             let dragonData = Object.entries(dragonTypeObject[d][1])
                             if (dragonSelection === dragonTitle) {
-                                // $("#traits-card").append(`<p id="dragon-type-card"><b>Dragon Type:</b> ${dragonTitle}. <b>${dragonData[0][0]}:</b> ${dragonData[0][1]}. <b>${dragonData[1][0]}:</b> ${dragonData[1][1]}.</p>`);
-                                $("#traits-card").append(`<div class="card-area"><p class="card-subjects"><b>Dragon Type:</b></p><span> </span><p id="dragon-type-card" class="card-entries">${dragonTitle}</p><span> </span><p class="card-subjects"><b>Damage Type:</b></p><span> </span><p id="damage-type-card" class="card-entries">${dragonData[0][1]}</p><span> </span><p class="card-subjects"><b>Breath Weapon:</b></p><span> </span><p id="breath-weapon-card" class="card-entries">${dragonData[1][1]}</p></div>`);
+                                $("#traits-card").append(`<div class="card-area" id="dragon-type-area"><p class="card-subjects"><b>Dragon Type:</b></p><span> </span><p id="dragon-type-card" class="card-entries">${dragonTitle}</p><span> </span><p class="card-subjects"><b>Damage Type:</b></p><span> </span><p id="damage-type-card" class="card-entries">${dragonData[0][1]}</p><span> </span><p class="card-subjects"><b>Breath Weapon:</b></p><span> </span><p id="breath-weapon-card" class="card-entries">${dragonData[1][1]}</p></div>`);
                                 
                             }
                         }
@@ -315,7 +314,29 @@ $(document).ready(function() {
                                 $("#draconic-ancestry-table").append(`<tr class="dragon-data"><td>${dragonTitle}</td><td>${dragonData[0][1]}</td><td>${dragonData[1][1]}</td></tr>`);
                             }
                             $("#draconic-ancestry-selector").val($("#dragon-type-card").text())
+
+
+                            // Performs processes when a new selection is made from #draconic-ancestry-selector
+                            $("#draconic-ancestry-selector").change(function() {
+
+                                // Defaults to refresh by removing the #dragon-type-card when user changes their selection 
+                                $("#dragon-type-area").remove();
+
+                                // creates a new variable for the selected dragon type
+                                let dragonSelection = $("#draconic-ancestry-selector option:selected").val();
+
+                                // Loops through dragonTypeObject, establishes title and data variables, matches title to selection, prints title and data to trait
+                                for (let d = 0; d < dragonTypeObject.length; d++) {
+                                    let dragonTitle = dragonTypeObject[d][0];
+                                    let dragonData = Object.entries(dragonTypeObject[d][1])
+                                    if (dragonSelection === dragonTitle) {
+                                        $("#traits-card").append(`<div class="card-area"><p class="card-subjects"><b>Dragon Type:</b></p><span> </span><p id="dragon-type-card" class="card-entries">${dragonTitle}</p><span> </span><p class="card-subjects"><b>Damage Type:</b></p><span> </span><p id="damage-type-card" class="card-entries">${dragonData[0][1]}</p><span> </span><p class="card-subjects"><b>Breath Weapon:</b></p><span> </span><p id="breath-weapon-card" class="card-entries">${dragonData[1][1]}</p></div>`);
+                                    }
+                                }
+                            })
                         }
+
+                        
 
                         // Performs tasks if no subrace is indicated on character card
                         if ($("#subrace-card").text() == "") {
