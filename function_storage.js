@@ -17,3 +17,10 @@ function raceChangeResets() {
     $("#subrace-card").text("");
     $("#languages-card").text("");
 }
+
+function raceDependenciesProcess(sizeValue, speedValue, darkvisionValue, languageDefault) {
+    $("#size-card").text(sizeValue);
+    $("#speed-card").text(speedValue + "ft");
+    $("#darkvision-card").text(darkvisionValue + "ft");
+    $("#languages-card").text(languageDefault);
+}
