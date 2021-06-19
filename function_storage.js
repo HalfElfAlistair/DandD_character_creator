@@ -30,3 +30,10 @@ function traitsProcess(traits) {
         $("#traits-card").append(`<p class="additional-trait"><b>${traits[t][0]}:</b> ${traits[t][1]}</p>`);
     }
 }
+
+function subraceSelectorProcess(subraceObject) {
+    // Loops through the relevant subrace titles and prints each one as a selector option in HTML
+    for (let s = 0; s < subraceObject.length; s++) {
+        $("#subrace-selector").append(`<option class="subrace-option">${subraceObject[s][0]}</option>`);
+    }
+}
