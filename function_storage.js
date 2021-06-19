@@ -24,3 +24,9 @@ function raceDependenciesProcess(sizeValue, speedValue, darkvisionValue, languag
     $("#darkvision-card").text(darkvisionValue + "ft");
     $("#languages-card").text(languageDefault);
 }
+
+function traitsProcess(traits) {
+    for (let t = 0; t < traits.length; t++) {
+        $("#traits-card").append(`<p class="additional-trait"><b>${traits[t][0]}:</b> ${traits[t][1]}</p>`);
+    }
+}
