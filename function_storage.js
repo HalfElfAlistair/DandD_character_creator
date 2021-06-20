@@ -71,3 +71,20 @@ function draconicAncestrySelectorProcess(dragonTypeObject) {
        $("#draconic-ancestry-table").append(`<tr class="dragon-data"><td>${dragonTitle}</td><td>${dragonData[0][1]}</td><td>${dragonData[1][1]}</td></tr>`);
    }
 }
+
+function draconicAncestryProcess(dragonTypeObject) {
+    // Defaults to refresh by removing the #dragon-type-card when user changes their selection 
+    $("#dragon-type-area").remove();
+
+    // creates a new variable for the selected dragon type
+    let dragonSelection = $("#draconic-ancestry-selector option:selected").val();
+
+    // Loops through dragonTypeObject, establishes title and data variables, matches title to selection, prints title and data to trait
+    for (let d = 0; d < dragonTypeObject.length; d++) {
+        let dragonTitle = dragonTypeObject[d][0];
+        let dragonData = Object.entries(dragonTypeObject[d][1])
+        if (dragonSelection === dragonTitle) {
+            $("#traits-card").append(`<div class="card-area" id="dragon-type-area"><p class="card-subjects"><b>Dragon Type:</b></p><span> </span><p id="dragon-type-card" class="card-entries">${dragonTitle}</p><span> </span><p class="card-subjects"><b>Damage Type:</b></p><span> </span><p id="damage-type-card" class="card-entries">${dragonData[0][1]}</p><span> </span><p class="card-subjects"><b>Breath Weapon:</b></p><span> </span><p id="breath-weapon-card" class="card-entries">${dragonData[1][1]}</p></div>`);
+        }
+    }
+}
