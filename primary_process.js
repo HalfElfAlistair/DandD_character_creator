@@ -53,8 +53,6 @@ $(document).ready(function() {
                 }
             }
         }
-
-
     });
 
     // Hides #previous button on load
