@@ -13,4 +13,28 @@ $(document).ready(function() {
         }
     });
 
+    // Function for different outcomes based on character selector choice
+    $("#character-selector").change(function() {
+
+        // Displays the physical creation, nav and show-hide card sections
+        $("#card-display-toggle, #physical-creation, #nav-section").show();
+
+        raceChangeResets()
+
+        // When "New Character" is selected, input fields and character card reset
+        if ($("#character-selector").val() == "New Character") {
+            fieldReset();
+
+            // Enables the physical creation function so the character can be built
+            newCharacterProcess();
+
+            // Submits the character-card to localStorage as a value, with the character-name as a key
+            $("#submit-button").click(function() {
+                localStorage.setItem($("#character-name").val(), $("#character-card").html());
+            })
+        }
+
+
+    });
+
 });
