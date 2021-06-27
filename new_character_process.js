@@ -1,5 +1,4 @@
-function physicalCreationProcess() {
-
+function newCharacterProcess() {
     // Creates a function that proceeds when a new option is chosen from the race selector
     $("#race-list").change(function() {
 
@@ -12,37 +11,12 @@ function physicalCreationProcess() {
         // Assigns the races object from race_data to a variable
         let racesObject = Object.entries(races);
 
-        // // Resets subrace, language and draconic-ancestry selectors when race selection is changed
-        // $("#subrace-selector").val($('#subrace-selector').find("option[selected]").val());
-        // $("#language-selector").val($('#language-selector').find("option[selected]").val());
-        // $("#draconic-ancestry-selector").val($('#draconic-ancestry-selector').find("option[selected]").val());
-
-        // // Defaults to refresh by removing the #dragon-type-card, selector and table data when user changes their race selection 
-        // $("#dragon-type-area, .dragon-select, .dragon-data").remove();
-
-        // // Defaults to hiding draconic ancestry and language sections when the selected race changes
-        // $("#draconic-ancestry-section, #language-section").hide();
-
         raceChangeResets()
-
-        // // Defaults to remove and size, speed, darkvision and language information, and hide language & draconic-ancestry sections if race is changed
-        // $("#size-card").text("");
-        // $("#speed-card").text("");
-        // $("#darkvision-card").text("");
-        // $("#languages-card").text("");
-
-        // raceDependenciesReset()
 
         // Ensures #physical-creation height adjusts to contain language dropdowns, #draconic-ancestry-table etc when visible
         $(window).click(function() {
             $("#physical-creation").css("height","auto");
         })
-
-        // Resets css for #physical-creation sections when race is changed
-        // $("#physical-creation").css("height","288px");
-
-        // // Defaults to remove 'Elvish' option from language selectors when race is changed
-        // $("#elvish-language-option").remove();
 
         // Loops through racesObject and assigns variables for child objects and their data
         for (let i = 0; i < racesObject.length; i++) {
@@ -141,10 +115,8 @@ function physicalCreationProcess() {
 
                 })
 
-
                 // Assigns a maximum value to the age selector input, based on chosen race
                 $("#character-age").attr("max", raceData[0][1]);
-                
 
             }
 
@@ -168,5 +140,4 @@ function physicalCreationProcess() {
             $("#age-card").text(ageSelection);
         }
     });
-
 }
