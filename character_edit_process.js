@@ -10,6 +10,30 @@ function characterEditProcess() {
                 $("#subrace-section").show();
                 subraceSelectorProcess(Object.entries(raceData[1][1]))
                 $("#subrace-selector").val($("#subrace-card").text());
+                $("#subrace-selector").change(function() {
+                    let subraceObject = Object.entries(raceData[1][1]);
+                    for (let s = 0; s < subraceObject.length; s++) {
+                        let subraceTitle = subraceObject[s][0];
+                        let subraceData = Object.entries(subraceObject[s][1]);
+
+                        if (subraceTitle == $("#subrace-selector option:selected").val()) {
+                            raceDependenciesProcess(subraceData[5][1], subraceData[6][1], subraceData[9][1], subraceData[7][1]);
+                        
+                            // Defaults to remove additional trait information when subrace selection is changed
+                            $(".additional-trait").remove();
+
+                            traitsProcess(Object.entries(subraceData[10][1]));
+
+                            languageProcess(subraceData[8][1], subraceData[7][1], $("#race-list option:selected").val())
+
+                            $("#physique-roller").click(function() {
+                                let physiqueArray = (physiqueCalculator(subraceData[1][1], subraceData[0][1], subraceData[2][1], subraceData[3][1], subraceData[4][1]));
+                                $("#height-card").text(physiqueArray[0]);
+                                $("#weight-card").text(physiqueArray[1]);
+                            })
+                        }
+                    }
+                })
                 $("#race-list").change(function() {
                     raceChangeResets()
                     $("#subrace-section, #subrace-subject").hide();

@@ -32,6 +32,26 @@ $(document).ready(function() {
             $("#submit-button").click(function() {
                 localStorage.setItem($("#character-name").val(), $("#character-card").html());
             })
+        } else {
+            // Loops through localStorage and finds a name entry which matches the select value, then replaces the character-card html with that which was stored. Also populates input fields with added card data in preparation for using submit button to update characters
+            for (let i = 0; storedData.length; i++) {
+                if (storedData[i][0] == $("#character-selector").val()) {
+                    $("#character-card").html(storedData[i][1]);
+                    $("#character-name").val($("#name-card").text());
+                    $("#character-age").val($("#age-card").text())
+                    $("#race-list").val($("#race-card").text());
+
+                    // Defaults to remove any subrace selector options so there are no duplicates or subraces with an incorrect race assignment
+                    $(".subrace-option").remove();
+
+                    characterEditProcess()
+
+                    // Submits character, plus any amendments, to localStorage
+                    $("#submit-button").click(function(){
+                        localStorage.setItem($("#character-name").val(), $("#character-card").html());
+                    })
+                }
+            }
         }
 
 
