@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // Hides certain sections on opening
-    $("#card-display-toggle, #nav-section, #character-card, #physical-creation, #subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section, #sumbit-section, #subrace-subject").hide();
+    $("#card-display-toggle, #nav-section, #character-card, #physical-creation, #subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section, #physique-table, #sumbit-section, #subrace-subject").hide();
 
     // Assigns a variable to access localStorage
     let storedData = Object.entries(localStorage);
@@ -28,10 +28,7 @@ $(document).ready(function() {
             // Enables the physical creation function so the character can be built
             newCharacterProcess();
 
-            // Submits the character-card to localStorage as a value, with the character-name as a key
-            $("#submit-button").click(function() {
-                localStorage.setItem($("#character-name").val(), $("#character-card").html());
-            })
+
         } else {
             // Loops through localStorage and finds a name entry which matches the select value, then replaces the character-card html with that which was stored. Also populates input fields with added card data in preparation for using submit button to update characters
             for (let i = 0; storedData.length; i++) {
@@ -46,13 +43,22 @@ $(document).ready(function() {
 
                     characterEditProcess()
 
-                    // Submits character, plus any amendments, to localStorage
-                    $("#submit-button").click(function(){
-                        localStorage.setItem($("#character-name").val(), $("#character-card").html());
+                    // Submits the character-card to localStorage as a value, with the character-name as a key
+                    $("#submit-button").click(function() {
+                        saveChecks()
                     })
                 }
             }
         }
+
+
+        // Submits the character-card to localStorage as a value, with the character-name as a key
+        $("#submit-button").click(function() {
+            saveChecks()
+        })
+
+
+
     });
 
     // Hides #previous button on load
@@ -91,13 +97,23 @@ $(document).ready(function() {
         }
     })
 
-    $("#show-hide-table").click(function() {
-        if ($("#show-hide-table").text() == "Show Table") {
+    $("#dragonborn-table-toggle").click(function() {
+        if ($("#dragonborn-table-toggle").text() == "Show Table") {
             $("#draconic-ancestry-table").show();
-            $("#show-hide-table").text("Hide Table");
+            $("#dragonborn-table-toggle").text("Hide Table");
         } else {
             $("#draconic-ancestry-table").hide();
-            $("#show-hide-table").text("Show Table");
+            $("#dragonborn-table-toggle").text("Show Table");
+        }
+    })
+
+    $("#physique-table-toggle").click(function() {
+        if ($("#physique-table-toggle").text() == "Show Table") {
+            $("#physique-table").show();
+            $("#physique-table-toggle").text("Hide Table");
+        } else {
+            $("#physique-table").hide();
+            $("#physique-table-toggle").text("Show Table");
         }
     })
 
