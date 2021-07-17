@@ -30,7 +30,7 @@ table {
   width: 100%;
   border: solid 1px #6E3635;
   margin-top: 10%;
-  font-size: 14px;
+  font-size: 12px;
 }
 table tr:nth-child(odd) {
   background-color: #FBFBF0;
@@ -129,7 +129,7 @@ table tr:nth-child(even) {
   border-radius: 3px;
 }
 
-#show-hide-table {
+.show-hide-table {
   border-radius: 3px;
   font-size: 15px;
   padding: 5px;
@@ -140,7 +140,7 @@ table tr:nth-child(even) {
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   width: 100px;
 }
-#show-hide-table:hover {
+.show-hide-table:hover {
   box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
   text-decoration: underline;
   cursor: pointer;
@@ -199,6 +199,11 @@ table tr:nth-child(even) {
   cursor: pointer;
 }
 
+@media only screen and (min-width: 360px) {
+  table {
+    font-size: 14px;
+  }
+}
 @media only screen and (min-width: 537px) {
   #physical-creation,
 #storage-area,

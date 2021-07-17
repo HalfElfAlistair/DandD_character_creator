@@ -109,7 +109,7 @@ table {
     width: 100%;
     border: solid 1px $primary-color;
     margin-top: 10%;
-    font-size: 14px;
+    font-size: 12px;
     tr {
         &:nth-child(odd) {
             background-color: $secondary-light;
@@ -119,6 +119,10 @@ table {
         }
     }
 }
+
+// #physique-table {
+//     font-size: 12px;
+// }
 
 .card {
     @include wrap();
@@ -176,7 +180,7 @@ table {
     @include sections-base();
 }
 
-#show-hide-table {
+.show-hide-table {
     @include button-alternative();
     width: 100px;
 }
@@ -209,6 +213,12 @@ table {
     background-color: $primary-light;
     color: $primary-color;
     border: none;
+}
+
+@media only screen and (min-width: 360px) {
+    table {
+        font-size: 14px;
+    }
 }
 
 @media only screen and (min-width: 537px) {

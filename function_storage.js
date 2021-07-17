@@ -4,18 +4,20 @@ function raceChangeResets() {
     $("#language-selector").val($('#language-selector').find("option[selected]").val());
     $("#draconic-ancestry-selector").val($('#draconic-ancestry-selector').find("option[selected]").val());
 
-    // Defaults to refresh by removing the #dragon-type-card, selector and table data when user changes their race selection 
-    $("#dragon-type-area, .dragon-select, .dragon-data").remove();
+    // Defaults to refresh by removing the #dragon-type-card, selector, table data and #extra-languages-card when user changes their race selection 
+    $("#dragon-type-area, .dragon-select, .dragon-data, #extra-languages-card").remove();
 
     // Defaults to hiding draconic ancestry & language sections, as well as #subrace-subject when the selected race changes
     $("#draconic-ancestry-section, #language-section, #subrace-subject").hide();
 
-    // Defaults to remove and size, speed, darkvision, subrace and language information
+    // Defaults to remove and size, speed, darkvision, subrace, language, height and weight information
     $("#size-card").text("");
     $("#speed-card").text("");
     $("#darkvision-card").text("");
     $("#subrace-card").text("");
     $("#languages-card").text("");
+    $("#height-card").text("");
+    $("#weight-card").text("");
 }
 
 function raceDependenciesProcess(sizeValue, speedValue, darkvisionValue, languageDefault) {
@@ -43,6 +45,10 @@ function languageProcess(languageAllowance, languageDefault, raceSelection) {
     if (languageAllowance === 1) {
         $("#language-section").show();
 
+        $("#languages-area").append(`<p id="extra-languages-card" class="card-entries"></p>`);
+
+        // $(`<p id="extra-languages-card" class="card-entries"></p>`).appendTo("#languages-area");
+
         // Removes the 'Elvish' option if previously added
         $("#elvish-language-option").remove();
 
@@ -55,7 +61,9 @@ function languageProcess(languageAllowance, languageDefault, raceSelection) {
 
         // Appends the updated language information to #languages-card
         $("#language-selector").change(function() {
-            $("#languages-card").text(languageDefault + ", " + $("#language-selector option:selected").val());
+            // $("#languages-card").text(languageDefault + ", " + $("#language-selector option:selected").val());
+            $("#extra-languages-card").text("& " + $("#language-selector option:selected").val());
+            
         })
     } else {
         $("#language-section").hide();
@@ -131,4 +139,46 @@ function physiqueCalculator(heightDiceType, baseInches, weightDiceRolls, weightD
     let weightToPrint = (weightResult + " lbs");
     let hwResultArray = [heightToPrint, weightToPrint];
     return hwResultArray;
+}
+
+// function languageCheck() {
+//     let languageCheckResult = "";
+//     // Assigns variable from race_data
+//     let racesObject = Object.entries(races);
+
+//     // Loops through racesObject and assigns variables for child objects and their data
+//     for (let i = 0; i < racesObject.length; i++) {
+//         let raceTitle = racesObject[i][0]
+//         let raceData = Object.entries(racesObject[i][1]);
+
+
+//     }
+// }
+
+
+function saveChecks() {
+    if ($("#name-card").text() == "") {
+        alert("Sorry, you can't save a nameless character.")
+    } else if (($("#race-card").text() == "") || ($("#age-card").text() == "") || ($("#height-card").text() == "") || ($("#size-card").text() == "")) {
+        let saveCheck = confirm("Your character hasn't been completed, are you sure you wish to save it now?");
+        if (saveCheck == true) {
+            localStorage.setItem($("#character-name").val(), $("#character-card").html());
+            alert("Saved")
+        }
+    } else if (($("#extra-languages-card").length == true) && ($("#extra-languages-card").text() === "")) {
+        let saveCheck = confirm("Your character hasn't been completed, are you sure you wish to save it now?");
+        if (saveCheck == true) {
+            localStorage.setItem($("#character-name").val(), $("#character-card").html());
+            alert("Saved")
+        }
+    } else if (($("#race-card").text() == "Dragonborn") && ($("#dragon-type-area").length == false)) {
+        let saveCheck = confirm("Your character hasn't been completed, are you sure you wish to save it now?");
+        if (saveCheck == true) {
+            localStorage.setItem($("#character-name").val(), $("#character-card").html());
+            alert("Saved")
+        }
+    } else {
+        localStorage.setItem($("#character-name").val(), $("#character-card").html());
+            alert("Saved")
+    }
 }

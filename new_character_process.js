@@ -66,6 +66,18 @@ function newCharacterProcess() {
 
                 } else {
                     $("#subrace-section").show();
+
+                    // Loops through subraceObject and assigns variables for child objects and their data
+                    for (let s = 0; s < subraceObject.length; s++) {
+                        let subraceTitle = subraceObject[s][0];
+                        let subraceData = Object.entries(subraceObject[s][1]);
+
+                        $("#physique-roller").click(function() {
+                            let physiqueArray = (physiqueCalculator(subraceData[1][1], subraceData[0][1], subraceData[2][1], subraceData[3][1], subraceData[4][1]));
+                            $("#height-card").text(physiqueArray[0]);
+                            $("#weight-card").text(physiqueArray[1]);
+                        })
+                    }
                 }
 
                 // Defaults to remove any subrace selector options so there are no duplicates or subraces with an incorrect race assignment
@@ -84,6 +96,9 @@ function newCharacterProcess() {
                     // Prints both the race and subrace selections
                     $("#race-card").text(raceSelection);
                     $("#subrace-card").text(subraceSelection);
+
+                    // Resets to remove #extra-languages-card when subrace is changed
+                    $("#extra-languages-card").remove();
 
                     // Resets language selector option when subrace selection is changed
                     $("#language-selector").val($('#language-selector').find("option[selected]").val());
@@ -117,6 +132,13 @@ function newCharacterProcess() {
 
                 // Assigns a maximum value to the age selector input, based on chosen race
                 $("#character-age").attr("max", raceData[0][1]);
+
+                // Adds a little info on the selected race's life expectancy
+                if (raceSelection == "Elf") {
+                    $("#age-info").text("An " + raceSelection + " tends to live to around " + raceData[0][1] + " years.");
+                } else {
+                    $("#age-info").text("A " + raceSelection + " tends to live to around " + raceData[0][1] + " years.");
+                }
 
             }
 

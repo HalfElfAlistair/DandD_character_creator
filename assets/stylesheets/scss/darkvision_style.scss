@@ -112,7 +112,7 @@ input {
 table {
     width: 100%;
     margin-top: 10%;
-    font-size: 14px;
+    font-size: 12px;
     tr {
         &:nth-child(odd) {
             background-color: $secondary-dark;
@@ -180,7 +180,7 @@ table {
     border: none;
 }
 
-#show-hide-table {
+.show-hide-table {
     @include button-alternative();
     width: 100px;
 }
@@ -216,6 +216,11 @@ table {
 }
 
 
+@media only screen and (min-width: 360px) {
+    table {
+        font-size: 14px;
+    }
+}
 
 
 @media only screen and (min-width: 537px) {
