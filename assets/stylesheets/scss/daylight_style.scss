@@ -177,7 +177,18 @@ table {
 #character-card {
     background-color: $primary-light;
     border: solid 1px $primary-color;
+    display: flex;
+    height: 100vh;
     @include sections-base();
+}
+
+#top-card {
+    height: 13%;
+}
+
+#bottom-card {
+    height: 87%;
+    overflow: scroll;
 }
 
 .show-hide-table {

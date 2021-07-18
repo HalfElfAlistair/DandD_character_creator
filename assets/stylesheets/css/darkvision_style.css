@@ -107,9 +107,20 @@ table tr:nth-child(even) {
 #character-card {
   background-color: #272727;
   border: solid 1px #272727;
+  display: flex;
+  height: 100vh;
   margin: 5%;
   padding: 5%;
   border-radius: 3px;
+}
+
+#top-card {
+  height: 13%;
+}
+
+#bottom-card {
+  height: 87%;
+  overflow: scroll;
 }
 
 #submit-button,

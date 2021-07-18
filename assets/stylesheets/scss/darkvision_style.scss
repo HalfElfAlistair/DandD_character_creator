@@ -168,7 +168,18 @@ table {
 #character-card {
     background-color: $primary-dark;
     border: solid 1px $primary-dark;
+    display: flex;
+    height: 100vh;
     @include sections-base();
+}
+
+#top-card {
+    height: 13%;
+}
+
+#bottom-card {
+    height: 87%;
+    overflow: scroll;
 }
 
 #submit-button,
