@@ -64,28 +64,59 @@ table tr:nth-child(even) {
   top: 3px;
 }
 
-#dark-light-switch {
-  margin: 5%;
-}
-#dark-light-switch button {
+.reset {
   border-radius: 3px;
   font-size: 15px;
   padding: 5px;
   width: 90px;
   box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
-  position: relative;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, 0);
+  background-color: #6E3635;
+  color: #EFEDC0;
+  border: solid 1.2px #6E3635;
+}
+.reset:hover {
+  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#row-1 {
+  padding: 5%;
+  display: flex;
+}
+
+#dark-light-toggle {
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px;
+  width: 90px;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
+  font-family: Bahnschrift, Verdana, Arial, sans-serif;
+  margin-right: 0;
+  margin-left: auto;
   background-color: #101010;
   color: #E6FECD;
   border: solid 1.2px black;
 }
-#dark-light-switch button:hover {
+#dark-light-toggle:hover {
   box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
   text-decoration: underline;
   cursor: pointer;
+}
+
+#total-reset {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+#physique-button-area {
+  display: flex;
+}
+
+#physique-reset {
+  margin-right: 0;
+  margin-left: auto;
 }
 
 #submit-button,
@@ -133,10 +164,11 @@ table tr:nth-child(even) {
 
 #top-card {
   height: 13%;
+  padding-bottom: 3%;
 }
 
 #bottom-card {
-  height: 87%;
+  height: 80%;
   overflow: scroll;
 }
 
@@ -231,10 +263,18 @@ table tr:nth-child(even) {
     width: 463px;
   }
 
-  #dark-light-switch {
+  #row-1 {
     margin: 35px auto;
-    padding: 17px;
-    width: 427px;
+    padding: 17px 0;
+    width: 463px;
+  }
+
+  #dark-light-toggle {
+    margin: 35px 0 35px auto;
+  }
+
+  #total-reset {
+    margin: 35px auto 35px 0;
   }
 }
 @media only screen and (min-width: 960px) {
@@ -264,7 +304,8 @@ table {
   #row-1 {
     grid-row-start: 1;
     grid-column: 1/3;
-    width: 100%;
+    margin: 35px;
+    width: auto;
   }
 
   #column-1 {
@@ -281,10 +322,6 @@ table {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-  }
-
-  #dark-light-switch {
-    margin: 35px;
   }
 
   #storage-area {

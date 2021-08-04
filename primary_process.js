@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // Hides certain sections on opening
-    $("#card-display-toggle, #nav-section, #character-card, #physical-creation, #subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section, #physique-table, #sumbit-section, #subrace-subject").hide();
+    $("#total-reset, #card-display-toggle, #nav-section, #character-card, #physical-creation, #subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section, #physique-table, #sumbit-section, #subrace-subject").hide();
 
     // Assigns a variable to access localStorage
     let storedData = Object.entries(localStorage);
@@ -17,7 +17,7 @@ $(document).ready(function() {
     $("#character-selector").change(function() {
 
         // Displays the physical creation, nav and show-hide card sections
-        $("#card-display-toggle, #physical-creation, #nav-section").show();
+        $("#total-reset, #card-display-toggle, #physical-creation, #nav-section").show();
 
         raceChangeResets()
 
@@ -114,6 +114,26 @@ $(document).ready(function() {
         } else {
             $("#physique-table").hide();
             $("#physique-table-toggle").text("Show Table");
+        }
+    })
+
+    $("#physique-reset").click(function() {
+        let resetCheck = confirm("Are you sure you wish to reset this value?");
+        if (resetCheck == true) {
+            $("#height-card").text("");
+            $("#weight-card").text("");
+        }
+    })
+
+    $("#total-reset").click(function() {
+        let resetCheck = confirm("Are you sure you wish to reset everything?");
+        if (resetCheck == true) {
+            $(".card-entries").text("");
+            raceChangeResets();
+            $("#race-list").val($('#race-list').find("option[selected]").val());
+            $("#character-name, #character-age").val("");
+            $(".additional-trait, #dragon-type-area").remove();
+            $("#subrace-section, #age-info").hide();
         }
     })
 

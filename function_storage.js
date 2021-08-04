@@ -47,8 +47,6 @@ function languageProcess(languageAllowance, languageDefault, raceSelection) {
 
         $("#languages-area").append(`<p id="extra-languages-card" class="card-entries"></p>`);
 
-        // $(`<p id="extra-languages-card" class="card-entries"></p>`).appendTo("#languages-area");
-
         // Removes the 'Elvish' option if previously added
         $("#elvish-language-option").remove();
 
@@ -61,8 +59,8 @@ function languageProcess(languageAllowance, languageDefault, raceSelection) {
 
         // Appends the updated language information to #languages-card
         $("#language-selector").change(function() {
-            // $("#languages-card").text(languageDefault + ", " + $("#language-selector option:selected").val());
-            $("#extra-languages-card").text("& " + $("#language-selector option:selected").val());
+            $("#languages-card").text(languageDefault + ", ");
+            $("#extra-languages-card").text($("#language-selector option:selected").val());
             
         })
     } else {
@@ -80,12 +78,9 @@ function draconicAncestrySelectorProcess(dragonTypeObject) {
    }
 }
 
-function draconicAncestryProcess(dragonTypeObject) {
+function draconicAncestryProcess(dragonTypeObject, dragonSelection) {
     // Defaults to refresh by removing the #dragon-type-card when user changes their selection 
     $("#dragon-type-area").remove();
-
-    // creates a new variable for the selected dragon type
-    let dragonSelection = $("#draconic-ancestry-selector option:selected").val();
 
     // Loops through dragonTypeObject, establishes title and data variables, matches title to selection, prints title and data to trait
     for (let d = 0; d < dragonTypeObject.length; d++) {
