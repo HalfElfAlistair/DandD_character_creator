@@ -48,6 +48,9 @@ function characterEditProcess() {
 
                         languageProcess(subraceData[8][1], subraceData[7][1], $("#race-list option:selected").val())
 
+                        // Sets language selection to auto mirror that of the extra-langugages-card
+                        $("#language-selector").val($("#extra-languages-card").text())
+
                         $("#physique-roller").click(function() {
                             let physiqueArray = (physiqueCalculator(subraceData[1][1], subraceData[0][1], subraceData[2][1], subraceData[3][1], subraceData[4][1]));
                             $("#height-card").text(physiqueArray[0]);
@@ -79,6 +82,13 @@ function characterEditProcess() {
                             // Assigns a maximum value to the age selector input, based on chosen race
                             $("#character-age").attr("max", raceData[0][1]);
 
+                            // Adds a little info on the selected race's life expectancy
+                            if ($("#race-list option:selected").val() == "Elf") {
+                                $("#age-info").text("An " + $("#race-list option:selected").val() + " tends to live to around " + raceData[0][1] + " years.");
+                            } else {
+                                $("#age-info").text("A " + $("#race-list option:selected").val() + " tends to live to around " + raceData[0][1] + " years.");
+                            }
+
                             // Shows draconic-ancestry-section if Dragonborn is selected from race dropdown
                             if ($("#race-list option:selected").val() == "Dragonborn") {
                                 $("#draconic-ancestry-section").show();
@@ -87,7 +97,7 @@ function characterEditProcess() {
 
                                 // Performs processes when a new selection is made from #draconic-ancestry-selector
                                 $("#draconic-ancestry-selector").change(function() {
-                                    draconicAncestryProcess(Object.entries(raceData[13][1]));
+                                    draconicAncestryProcess(Object.entries(raceData[13][1]), $("#draconic-ancestry-selector option:selected").val());
                                 })
                             }
 
@@ -167,6 +177,30 @@ function characterEditProcess() {
             } else {
                 $("#subrace-section").hide();
 
+                languageProcess(raceData[10][1], raceData[9][1], $("#race-list option:selected").val());
+
+                // Sets language selection to auto mirror that of the extra-langugages-card
+                $("#language-selector").val($("#extra-languages-card").text())
+
+                // Shows draconic-ancestry-section if Dragonborn is selected from race dropdown
+                if ($("#race-list option:selected").val() === "Dragonborn") {
+                    $("#draconic-ancestry-section").show();
+
+                    draconicAncestrySelectorProcess(Object.entries(raceData[13][1]))
+
+                    // Sets dragonic ancestry selection to auto mirror that of the dragon-type-card
+                    $("#draconic-ancestry-selector").val($("#dragon-type-card").text())
+
+                    $("#draconic-ancestry-selector").change(function() {
+                        // Loops through race data, assigns variables from it
+                        for (let i = 0; i < racesObject.length; i++) {
+                            let raceData = Object.entries(racesObject[i][1]);
+
+                            draconicAncestryProcess(Object.entries(raceData[13][1]), $("#draconic-ancestry-selector option:selected").val());
+                        } 
+                    })
+                }
+
                 $("#race-list").change(function() {
 
                     // Establishes raceSelection input value
@@ -204,7 +238,7 @@ function characterEditProcess() {
             
                                 // Performs processes when a new selection is made from #draconic-ancestry-selector
                                 $("#draconic-ancestry-selector").change(function() {
-                                    draconicAncestryProcess(Object.entries(raceData[13][1]));
+                                    draconicAncestryProcess(Object.entries(raceData[13][1]), $("#draconic-ancestry-selector option:selected").val());
                                 })
                             }
             
@@ -338,16 +372,4 @@ function characterEditProcess() {
             $("#age-card").text(ageSelection);
         }
     });
-
-    
-
-    // if (($("#race-list option:selected").val() == racesObject[i][0])) {
-    //     $("#age-info").text(raceData[0][1])
-    // }
-        // if ($("#race-card").text() == "Elf") {
-        //     $("#age-info").text("An " + $("#race-card").text() + " tends to live to around " + raceData[0][1] + " years.");
-        // } else {
-        //     $("#age-info").text("A " + $("#race-card").text() + " tends to live to around " + raceData[0][1] + " years.");
-        // }
-
 }

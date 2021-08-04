@@ -20,11 +20,9 @@
     </head>
     <body>
         <div id="row-1">
-            <div id="dark-light-switch">
-                <div>
-                    <button type="button" id="dark-light-toggle">Darkvision</button>
-                </div>
-            </div>
+            <button type="button" class="reset" id="total-reset"><span class="material-icons md-18">
+                restart_alt</span>Reset</button>
+            <button type="button" id="dark-light-toggle">Darkvision</button>
         </div>
         <div id="column-1">
             <div id="storage-area">
@@ -112,8 +110,9 @@
                     </div>
                     <div id="Physique-calculation-info">
                         <p>The height value for your character is calculated by rolling dice and adding the scores to a base height value.<br><br>The rolled scores are then multiplied by further dice rolls and added to a base figure for weight.<br><br>Show the table below to get an idea for the base values and dice rolls required for each race and certain sub-races.</p>
-                        <div>
+                        <div id="physique-button-area">
                             <button type="button" class="show-hide-table" id="physique-table-toggle">Show Table</button>
+                            <button type="button" class="reset" id="physique-reset"><span class="material-icons md-18">restart_alt</span>Reset</button>
                         </div>
                         <table id="physique-table">
                             <tr>
@@ -232,50 +231,60 @@
             </div>
             <section id="character-card">
                 <div class="card">
-                    <h2>Character Card</h2>
+                    <div id="top-card">
+                        <h2>Character Card</h2>
+                        <div class="card-area" id="name-area">
+                            <p class="card-subjects"><b>Name:</b></p>
+                            <p id="name-card" class="card-entries"></p>
+                        </div>
+                    </div>
+                    <div id="bottom-card">
+                        <div class="card-area">
+                            <p class="card-subjects"><b>Race:</b></p>
+                            <p id="race-card" class="card-entries"></p>
+                            <p class="card-subjects" id="subrace-subject"><b>Subrace:</b></p>
+                            <p id="subrace-card" class="card-entries"></p>
+                        </div>
+                        <div class="card-area">
+                            <p class="card-subjects"><b>Age:</b></p>
+                            <p id="age-card" class="card-entries"></p>
+                        </div>
+                        <div class="card-area">
+                            <p class="card-subjects"><b>Size:</b></p>
+                            <p id="size-card" class="card-entries"></p>
+                        </div>
+                        <div class="card-area">
+                            <p class="card-subjects"><b>Height:</b></p>
+                            <p id="height-card" class="card-entries"></p>
+                        </div>
+                        <div class="card-area">
+                            <p class="card-subjects"><b>Weight:</b></p>
+                            <p id="weight-card" class="card-entries"></p>
+                        </div>
+                        <div class="card-area">
+                            <p class="card-subjects"><b>Speed:</b></p>
+                            <p id="speed-card" class="card-entries"></p>
+                        </div>
+                        <div class="card-area" id="languages-area">
+                            <p class="card-subjects"><b>Languages:</b></p>
+                            <p id="languages-card" class="card-entries"></p>
+                            <!-- <p id="extra-languages-card" class="card-entries"></p> -->
+                        </div>
+                        <div class="card-area">
+                            <p class="card-subjects"><b>Darkvision Range:</b></p>
+                            <p id="darkvision-card" class="card-entries"></p>
+                        </div>
+                        <div id="traits-card"></div>
+                    </div>
+                    
                     <div class="card-area">
                         
                     </div>
-                    <div class="card-area">
+                    <!-- <div class="card-area">
                         <p class="card-subjects"><b>Name:</b></p>
                         <p id="name-card" class="card-entries"></p>
-                    </div>
-                    <div class="card-area">
-                        <p class="card-subjects"><b>Race:</b></p>
-                        <p id="race-card" class="card-entries"></p>
-                        <p class="card-subjects" id="subrace-subject"><b>Subrace:</b></p>
-                        <p id="subrace-card" class="card-entries"></p>
-                    </div>
-                    <div class="card-area">
-                        <p class="card-subjects"><b>Age:</b></p>
-                        <p id="age-card" class="card-entries"></p>
-                    </div>
-                    <div class="card-area">
-                        <p class="card-subjects"><b>Size:</b></p>
-                        <p id="size-card" class="card-entries"></p>
-                    </div>
-                    <div class="card-area">
-                        <p class="card-subjects"><b>Height:</b></p>
-                        <p id="height-card" class="card-entries"></p>
-                    </div>
-                    <div class="card-area">
-                        <p class="card-subjects"><b>Weight:</b></p>
-                        <p id="weight-card" class="card-entries"></p>
-                    </div>
-                    <div class="card-area">
-                        <p class="card-subjects"><b>Speed:</b></p>
-                        <p id="speed-card" class="card-entries"></p>
-                    </div>
-                    <div class="card-area" id="languages-area">
-                        <p class="card-subjects"><b>Languages:</b></p>
-                        <p id="languages-card" class="card-entries"></p>
-                        <!-- <p id="extra-languages-card" class="card-entries"></p> -->
-                    </div>
-                    <div class="card-area">
-                        <p class="card-subjects"><b>Darkvision Range:</b></p>
-                        <p id="darkvision-card" class="card-entries"></p>
-                    </div>
-                    <div id="traits-card"></div>
+                    </div> -->
+                    
                 </div>
             </section>
         </div>

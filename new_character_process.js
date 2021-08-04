@@ -37,7 +37,7 @@ function newCharacterProcess() {
 
                     // Performs processes when a new selection is made from #draconic-ancestry-selector
                     $("#draconic-ancestry-selector").change(function() {
-                        draconicAncestryProcess(Object.entries(raceData[13][1]));
+                        draconicAncestryProcess(Object.entries(raceData[13][1]), $("#draconic-ancestry-selector option:selected").val());
                     })
                 }
 
