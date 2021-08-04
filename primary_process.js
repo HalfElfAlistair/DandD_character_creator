@@ -3,13 +3,6 @@ $(document).ready(function() {
     // Hides certain sections on opening
     $("#total-reset, #card-display-toggle, #nav-section, #character-card, #physical-creation, #subrace-section, #language-section, #draconic-ancestry-section, #draconic-ancestry-table, #name-section, #age-section, #physique-section, #physique-table, #sumbit-section, #subrace-subject").hide();
 
-    // if ($("#total-reset").is("visible")) {
-    //     alert("Testing")
-    //     // $("body").css("background-color","blue")
-    // }
-
-    // $("#dark-light-toggle").css({"position":"relative","left":"50%","margin-right":"-50%","transform":"translate(-50%, 0)"})
-
     // Assigns a variable to access localStorage
     let storedData = Object.entries(localStorage);
 
@@ -22,23 +15,6 @@ $(document).ready(function() {
 
     // Function for different outcomes based on character selector choice
     $("#character-selector").change(function() {
-
-        // if ($("#row-1").width() < 537) {
-        //     $("#dark-light-toggle").css({"margin-left":"auto","margin-right":"0"});
-        // } else if (($("#row-1").width() < 960) && ($("#row-1").width() > 536)) {
-        //     $("#dark-light-toggle").css({"margin-top":"35px","margin-right":"35px","margin-bottom":"35px","margin-left":"auto"});
-        // } else {
-        //     $("#dark-light-toggle").css({"margin-left":"auto","margin-right":"7%"});
-        // }
-        // $("#dark-light-toggle").css({"margin-left":"auto","margin-right":"0"});
-
-        // $("#dark-light-toggle").css("margin-left","auto")
-        // $("#dark-light-toggle").css("margin-right","0")
-
-        // $("#dark-light-toggle").css({"position":"","left":"","margin-left":"auto","margin-right":"0","transform":""})
-        // // $("#row-1").css({"display":"inline-block","width":"100%"})
-        // $("#dark-light-toggle").css("float","right")
-        // $("#dark-light-toggle").css("display","inline-block")
 
         // Displays the physical creation, nav and show-hide card sections
         $("#total-reset, #card-display-toggle, #physical-creation, #nav-section").show();
