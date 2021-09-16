@@ -27,12 +27,13 @@ Made as a fun project to help me practice, improve and display my coding skills.
 
 Provide an easy way to roll a new D&D character.
 
-Practice, improve and demonstrate what we can do with fundamental coding languages. In particular JQuery and SCSS.
+Practice, improve and demonstrate what I can do with fundamental coding languages. In particular JQuery and SCSS.
 
 ## Technologies
 
 - HTML
 - JavaScript/JQuery
+- CSS/SCSS
 
 ## Launch
 
@@ -67,7 +68,7 @@ As well as providing the information needed to build this project, I've also use
 Very good friends who actually got me the Players Handbook. Jamie has been learning to code and we've discussed this as a good project idea.
 
 ### Max Larkins-Waugh
-Max had a look at my project once I was fairly happy with the first stage of it. He provided some brilliant recommendations for how I could improve it.
+Max, a professional QA tester, had a look at my project once I was fairly happy with the first stage of it. He provided some brilliant recommendations for how I could improve it.
 
 ### [Learn JQuery](https://learn.jquery.com/)
 A brilliant resource for learning JQuery.
