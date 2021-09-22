@@ -69,14 +69,12 @@ table tr:nth-child(even) {
   font-size: 15px;
   padding: 5px;
   width: 90px;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   background-color: #6E3635;
   color: #EFEDC0;
   border: solid 1.2px #6E3635;
 }
 .reset:hover {
-  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -91,7 +89,6 @@ table tr:nth-child(even) {
   font-size: 15px;
   padding: 5px;
   width: 90px;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   margin-right: 0;
   margin-left: auto;
@@ -100,7 +97,6 @@ table tr:nth-child(even) {
   border: solid 1.2px black;
 }
 #dark-light-toggle:hover {
-  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -125,7 +121,6 @@ table tr:nth-child(even) {
   font-size: 15px;
   padding: 5px;
   width: 90px;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   position: relative;
   left: 50%;
@@ -137,7 +132,6 @@ table tr:nth-child(even) {
 }
 #submit-button:hover,
 #physique-roller:hover {
-  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -146,20 +140,20 @@ table tr:nth-child(even) {
 #storage-area {
   background-color: #EFEDC0;
   height: auto;
-  border: solid 1px #6E3635;
   margin: 5%;
   padding: 5%;
   border-radius: 3px;
+  box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.2);
 }
 
 #character-card {
   background-color: #EFEDC0;
-  border: solid 1px #6E3635;
   display: flex;
   height: 100vh;
   margin: 5%;
   padding: 5%;
   border-radius: 3px;
+  box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.2);
 }
 
 #top-card {
@@ -169,7 +163,7 @@ table tr:nth-child(even) {
 
 #bottom-card {
   height: 80%;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .show-hide-table {
@@ -179,12 +173,10 @@ table tr:nth-child(even) {
   background-color: #6E3635;
   color: #EFEDC0;
   border: none;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   width: 100px;
 }
 .show-hide-table:hover {
-  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -198,11 +190,9 @@ table tr:nth-child(even) {
   font-size: 15px;
   padding: 5px;
   width: 90px;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
 }
 #nav-section button:hover {
-  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -226,7 +216,6 @@ table tr:nth-child(even) {
   font-size: 15px;
   padding: 5px;
   width: 90px;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   position: relative;
   left: 50%;
@@ -237,7 +226,6 @@ table tr:nth-child(even) {
   border: none;
 }
 #show-hide-toggle:hover {
-  box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
   text-decoration: underline;
   cursor: pointer;
 }

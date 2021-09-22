@@ -75,14 +75,12 @@ table tr:nth-child(even) {
   font-size: 15px;
   padding: 5px;
   width: 90px;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   background-color: #E9E0F0;
   color: #161616;
   border: solid 1.2px #E9E0F0;
 }
 .reset:hover {
-  box-shadow: 0px 8px 6px 0 rgba(125, 78, 170, 0.7);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -97,7 +95,6 @@ table tr:nth-child(even) {
   font-size: 15px;
   padding: 5px;
   width: 90px;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   margin-right: 0;
   margin-left: auto;
@@ -106,7 +103,6 @@ table tr:nth-child(even) {
   border: solid 1.2px #E6FECD;
 }
 #dark-light-toggle:hover {
-  box-shadow: 0px 8px 6px 0 rgba(125, 78, 170, 0.7);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -131,7 +127,6 @@ table tr:nth-child(even) {
   font-size: 15px;
   padding: 5px;
   width: 90px;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   position: relative;
   left: 50%;
@@ -143,7 +138,6 @@ table tr:nth-child(even) {
 }
 #submit-button:hover,
 #physique-roller:hover {
-  box-shadow: 0px 8px 6px 0 rgba(125, 78, 170, 0.7);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -175,7 +169,7 @@ table tr:nth-child(even) {
 
 #bottom-card {
   height: 80%;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .show-hide-table {
@@ -185,12 +179,10 @@ table tr:nth-child(even) {
   background-color: #38214d;
   color: #E9E0F0;
   border: none;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   width: 100px;
 }
 .show-hide-table:hover {
-  box-shadow: 0px 4px 3px 0 rgba(125, 78, 170, 0.4);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -204,11 +196,9 @@ table tr:nth-child(even) {
   font-size: 15px;
   padding: 5px;
   width: 90px;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
 }
 #nav-section button:hover {
-  box-shadow: 0px 8px 6px 0 rgba(125, 78, 170, 0.7);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -232,7 +222,6 @@ table tr:nth-child(even) {
   font-size: 15px;
   padding: 5px;
   width: 90px;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.4);
   font-family: Bahnschrift, Verdana, Arial, sans-serif;
   position: relative;
   left: 50%;
@@ -243,7 +232,6 @@ table tr:nth-child(even) {
   border: solid 1px #272727;
 }
 #show-hide-toggle:hover {
-  box-shadow: 0px 8px 6px 0 rgba(125, 78, 170, 0.7);
   text-decoration: underline;
   cursor: pointer;
 }
